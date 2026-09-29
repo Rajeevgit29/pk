@@ -78,10 +78,12 @@ export const nav = [
 ];
 
 export const hero = {
-  eyebrow: "A Youth-Led Non-Profit",
   titleLines: ["Har Haath", "Mein Kitab"],
   subtitle: "Education beyond the classroom.",
-  body: "Project Kitab is a youth-led non-profit working towards SDG 4 – Quality Education for All. We go beyond conventional curriculum, creating safe, open and empowering spaces to learn, unlearn and grow.",
+  body: [
+    "Learning is not limited to textbooks or school hours. We create opportunities for children to explore, participate, make mistakes and discover what they enjoy.",
+    "All of it comes back to one thing: making education more accessible.",
+  ],
   note: ["Same", "Books", "Brighter", "Futures"],
   image: {
     src: "/images/hero-kids.png",

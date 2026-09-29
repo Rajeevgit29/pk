@@ -30,8 +30,7 @@ export function Hero() {
 
       <div className="page-container relative flex min-h-[max(40rem,100svh)] flex-col justify-end pb-24 pt-[52svh] sm:pt-[48svh] lg:min-h-[clamp(36rem,43vw,46rem)] lg:justify-center lg:pb-20 lg:pt-[7.25rem]">
         <div className="max-w-[36rem]">
-          <p className="eyebrow text-white/85">{hero.eyebrow}</p>
-          <h1 id="hero-title" className="display mt-4 text-[clamp(3rem,5.4vw,5.5rem)] text-white">
+          <h1 id="hero-title" className="display text-[clamp(3rem,5.4vw,5.5rem)] text-white">
             {hero.titleLines.map((line) => (
               <span key={line} className="block">
                 {line}
@@ -39,7 +38,11 @@ export function Hero() {
             ))}
           </h1>
           <p className="mt-5 font-serif text-[clamp(1.4rem,1.85vw,1.95rem)] leading-tight text-white">{hero.subtitle}</p>
-          <p className="mt-3 max-w-[31rem] text-[0.98rem] leading-relaxed text-white/85 sm:text-[1.05rem]">{hero.body}</p>
+          <div className="mt-3 max-w-[31rem] space-y-2 text-[0.98rem] leading-relaxed text-white/85 sm:text-[1.05rem]">
+            {hero.body.map((p) => (
+              <p key={p.slice(0, 24)}>{p}</p>
+            ))}
+          </div>
 
           <div className="mt-7">
             <ButtonLink href="/get-involved" arrow className="px-8">
