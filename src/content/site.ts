@@ -127,15 +127,13 @@ export const whatWeDo = {
     "We don't just put books in children's hands. We put possibilities there. Education can begin with a book, but it shouldn't end there.",
   note: ["Education", "Builds Brighter", "Tomorrows"],
   words: ["Knowledge", "People", "Opportunities", "A Brighter", "Tomorrow"],
-  /** Cards on the home page. */
-  cards: [
-    { title: "Educational Access", icon: "book", image: null },
-    { title: "Financial Literacy", icon: "rupee", image: null },
-    { title: "Sexual Health & Consent", icon: "heart", image: null },
-    { title: "Ethics & Equity", icon: "scales", image: null },
-    { title: "Sport & Creativity", icon: "football", image: null },
-    { title: "And More…", icon: "sparkle", image: null },
-  ] as { title: string; icon: IconName; image: Photo }[],
+  /** Photo beside "More Than Just Books" on the home page (portrait, 1080×1350). */
+  image: {
+    src: "/images/what-we-do-children.png",
+    alt: "A crowd of children listening during a session, one boy raising his hand",
+    width: 1080,
+    height: 1350,
+  },
   /** Full copy for the What We Do page. */
   page: {
     title: "We don't just put books in children's hands. We put possibilities there.",
