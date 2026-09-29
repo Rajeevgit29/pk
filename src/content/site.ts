@@ -155,7 +155,8 @@ export const whatWeDo = {
       eyebrow: "Gyaan Through Maidaan",
       title: "Learning, on the football field.",
       body: "Through Gyaan Through Maidaan, we take learning onto the football field, where teamwork, discipline and resilience are learnt with every pass.",
-      image: null as Photo,
+      /** From IMG_1643.jpeg; the camera's date stamp was cropped off the bottom. */
+      image: { src: "/images/gyaan-through-maidaan.jpg", alt: "Young players on a football pitch as one of them dribbles the ball forward" } as Photo,
     },
     reach:
       "Rooted in Delhi NCR and now running drives in Mumbai and Bangalore, we work with communities and partner organisations to bring all of this to children who are too often left out of conversations about opportunity.",
@@ -224,9 +225,6 @@ export const initiatives = {
 
 export const whoWeAre = {
   eyebrow: "Who We Are",
-  title: ["Young People.", "Real Change."],
-  intro:
-    "Project Kitab is a youth-led non-profit started by students with one question: what if every child had the kind of education that lets them do more than pass an exam?",
   words: ["Youth-Led", "Inclusive", "Community-Driven", "Impact-Focused", "Always Learning"],
   image: null as Photo,
   page: {
@@ -248,11 +246,7 @@ export const whoWeAre = {
 
 export const getInvolved = {
   eyebrow: "Get Involved",
-  title: ["Be a Part of", "Something Bigger"],
-  intro:
-    "There's more than one way to be part of Project Kitab. Have some time? Give it. Have a skill? Share it. Have an idea? Bring it.",
   words: ["Different", "People", "Same Mission"],
-  image: null as Photo,
   page: {
     title: "There's more than one way to be part of Project Kitab.",
     paragraphs: [
@@ -281,17 +275,8 @@ export const getInvolved = {
 
 export const gallery = {
   eyebrow: "Gallery",
-  title: "Moments That Matter",
   intro: "Some things are better seen than explained.",
   body: "Muddy football boots, a first performance, a borrowed book, a team huddle, a loud laugh. These are the moments behind the mission.",
-  /** Photos for the home-page strip (from the gallery; wide slots 1 and 5 suit landscape photos). */
-  strip: [
-    { src: "/gallery/full/28.webp", alt: "Volunteers and children with a hand-painted banner" },
-    { src: "/gallery/full/18.webp", alt: "Two children painting together" },
-    { src: "/gallery/full/11.webp", alt: "Young children in winter caps making peace signs" },
-    { src: "/gallery/full/27.webp", alt: "A volunteer carrying a smiling child on his shoulders" },
-    { src: "/gallery/full/cf839473-8994-45ac-8897-7753e4a45fef.webp", alt: "Students cheering and holding up books in a classroom" },
-  ] as Photo[],
 };
 
 export const blog = {

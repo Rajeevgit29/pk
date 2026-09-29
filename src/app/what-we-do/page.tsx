@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { CtaBand } from "@/components/CtaBand";
 import { TornEdge } from "@/components/Decor";
 import { Icon } from "@/components/Icon";
 import { PageHero } from "@/components/PageHero";
@@ -52,6 +51,7 @@ export default function WhatWeDoPage() {
           label="Football photo coming soon"
           sizes="(min-width: 1024px) 50vw, 100vw"
           className="min-h-72 lg:min-h-[28rem]"
+          imageClassName="object-[80%_60%]"
         />
         <div className="teal-glow flex items-center px-6 py-16 sm:px-10 lg:px-16">
           <div className="max-w-lg">
@@ -65,7 +65,7 @@ export default function WhatWeDoPage() {
         <TornEdge color="var(--color-petrol)" side="bottom" seed={73} height={28} />
       </section>
 
-      <section className="paper relative pb-16 pt-28">
+      <section className="paper relative pb-32 pt-28">
         <div className="page-container grid gap-12 lg:grid-cols-12">
           <p className="text-[1.08rem] leading-relaxed lg:col-span-5">{page.reach}</p>
           <div className="lg:col-span-6 lg:col-start-7">
@@ -74,8 +74,8 @@ export default function WhatWeDoPage() {
             {page.steps.map((step, i) => (
               <li
                 key={step}
-                className={`flex items-baseline gap-4 border-b border-line pb-3 font-serif text-[clamp(1.35rem,2.2vw,1.9rem)] leading-snug ${
-                  i === page.steps.length - 1 ? "border-none text-ocean" : "text-heading"
+                className={`flex items-baseline gap-4 pb-3 font-serif text-[clamp(1.35rem,2.2vw,1.9rem)] leading-snug text-heading ${
+                  i === page.steps.length - 1 ? "" : "border-b border-line"
                 }`}
               >
                 <span className="font-sans text-xs font-medium tracking-[0.2em] text-ocean/70">0{i + 1}</span>
@@ -87,7 +87,6 @@ export default function WhatWeDoPage() {
         </div>
       </section>
 
-      <CtaBand />
     </>
   );
 }

@@ -6,7 +6,7 @@ import { HandNote, WordStack } from "../Decor";
 export function WhatWeDo() {
   const { image } = whatWeDo;
   return (
-    <section aria-labelledby="wwd-title" className="paper relative pb-24 pt-16 lg:pb-28">
+    <section aria-labelledby="wwd-title" className="paper relative pb-28 pt-16 lg:pb-32">
       <div className="page-container grid items-center gap-12 lg:grid-cols-[minmax(0,21rem)_minmax(0,26rem)] lg:justify-between xl:grid-cols-[minmax(0,21rem)_1fr_minmax(0,26rem)] xl:gap-12">
         <div>
           <p className="eyebrow text-ocean">{whatWeDo.eyebrow}</p>

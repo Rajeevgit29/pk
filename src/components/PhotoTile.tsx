@@ -15,6 +15,7 @@ export function PhotoTile({
   className = "",
   showLabel = true,
   labelClassName = "bottom-2",
+  imageClassName = "",
 }: {
   photo: Photo;
   icon?: IconName;
@@ -24,11 +25,13 @@ export function PhotoTile({
   className?: string;
   showLabel?: boolean;
   labelClassName?: string;
+  /** e.g. "object-[80%_50%]" to keep the right-hand side of a wide photo in view */
+  imageClassName?: string;
 }) {
   if (photo) {
     return (
       <div className={`relative overflow-hidden bg-deep ${className}`}>
-        <Image src={photo.src} alt={photo.alt} fill sizes={sizes} className="object-cover" />
+        <Image src={photo.src} alt={photo.alt} fill sizes={sizes} className={`object-cover ${imageClassName}`} />
       </div>
     );
   }

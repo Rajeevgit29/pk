@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { CtaBand } from "@/components/CtaBand";
 import { PageHero } from "@/components/PageHero";
 import { PhotoTile } from "@/components/PhotoTile";
-import { StatsBar } from "@/components/sections/StatsBar";
 import { TornEdge, WordStack } from "@/components/Decor";
 import { whoWeAre } from "@/content/site";
 
@@ -50,9 +48,7 @@ export default function WhoWeArePage() {
         </div>
       </section>
 
-      <StatsBar />
-
-      <section className="paper relative pb-16 pt-24 lg:pt-28">
+      <section className="paper relative pb-32 pt-4 lg:pt-6">
         <div className="page-container grid gap-10 lg:grid-cols-12">
           <p className="text-[1.08rem] leading-relaxed lg:col-span-6">{page.needs}</p>
           <blockquote className="lg:col-span-5 lg:col-start-8">
@@ -62,7 +58,6 @@ export default function WhoWeArePage() {
         </div>
       </section>
 
-      <CtaBand />
     </>
   );
 }
