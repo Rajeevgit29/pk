@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# original gallery photos (large); the web-ready versions in public/gallery/ are committed
+/photos/gallery/*
+!/photos/gallery/.gitkeep
+!/photos/gallery/captions.json

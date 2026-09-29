@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Project Kitab website
 
-## Getting Started
+The website for **Project Kitab — Har Haath Mein Kitab**, built with Next.js 16 and Tailwind CSS 4.
 
-First, run the development server:
+## Run it on your computer
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install      # first time only
+npm run dev      # then open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where things live
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| What | Where |
+|---|---|
+| **All text, links, contact and donation details** | `src/content/site.ts` |
+| Hero photo | `public/images/hero-kids.png` |
+| Logo files | `public/brand/` (the originals are in `~/Desktop/project-kitab-logo/`) |
+| Brand colours and fonts | `src/app/globals.css` (`@theme` block) |
+| Home page sections | `src/components/sections/` |
+| Inner pages | `src/app/<page>/page.tsx` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Anything set to `null` in `site.ts` (a photo, a link, the contact email) shows a tidy
+placeholder or falls back to Instagram until you fill it in.
 
-## Learn More
+## Adding photos
 
-To learn more about Next.js, take a look at the following resources:
+**Section photos** (What We Do cards, initiatives, Who We Are, Get Involved, blog):
+put the file in `public/images/`, then set its `image` in `src/content/site.ts`, for example
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```ts
+{ title: "Financial Literacy", icon: "rupee", image: { src: "/images/financial-literacy.jpg", alt: "Students learning to budget" } },
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Next.js serves every photo as a sized AVIF/WebP automatically. Use originals
+(from the camera, AirDrop or Drive), not WhatsApp-compressed copies.
 
-## Deploy on Vercel
+**Gallery (Dome Gallery)**: drop the original photos into `photos/gallery/` and run
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run gallery
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This makes a fast thumbnail and a sharp full-size version of each photo and adds them to the dome.
+Optional captions for screen readers go in `photos/gallery/captions.json`:
+`{ "football-day.jpg": "Children celebrating a goal at Gyaan Through Maidaan" }`.
+
+## Credits
+
+Dome Gallery component adapted from [React Bits](https://reactbits.dev/components/dome-gallery) (MIT).
