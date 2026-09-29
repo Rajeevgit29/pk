@@ -38,7 +38,7 @@ export const site = {
   name: "Project Kitab",
   tagline: "Har Haath Mein Kitab",
   description:
-    "Project Kitab is a youth-led non-profit working towards SDG 4 – Quality Education for All. We take education beyond the curriculum, into conversations, onto football fields and stages, and into communities across Delhi NCR, Mumbai and Bengaluru.",
+    "Project Kitab is a youth-led non-profit working towards SDG 4 – Quality Education for All. We take education beyond the curriculum, into conversations, onto football fields and stages, and into communities across Delhi NCR, Mumbai and Bangalore.",
   footerLine: "A more informed. A kinder. A brighter tomorrow.",
 };
 
@@ -104,7 +104,7 @@ export const stats: { value: string; count: number; prefix?: string; label: stri
 
 export const reach = {
   home: "Rooted in Delhi NCR",
-  expanding: "Now running drives in Mumbai & Bengaluru",
+  expanding: "Now running drives in Mumbai & Bangalore",
 };
 
 /** The doc's "Landing Page" copy. */
@@ -112,7 +112,7 @@ export const manifesto = {
   lead: "Education shouldn't depend on where you're born. And it shouldn't end at a textbook.",
   paragraphs: [
     "Every child has questions worth answering, talents worth noticing and a future that belongs to them. Project Kitab exists to make sure they get the chance to reach it.",
-    "Yes, we bring books and classrooms closer. We also teach children how money works, what consent means, why fairness matters, and how to lose a football match and still walk off the field with their head held high. We take education beyond the curriculum, into conversations, onto football fields and stages, and into communities across Delhi NCR, Mumbai and Bengaluru.",
+    "Yes, we bring books and classrooms closer. We also teach children how money works, what consent means, why fairness matters, and how to lose a football match and still walk off the field with their head held high. We take education beyond the curriculum, into conversations, onto football fields and stages, and into communities across Delhi NCR, Mumbai and Bangalore.",
   ],
   quote: ["A textbook can teach a child to pass.", "We want to help them live."],
   signoff: ["Har Haath Mein Kitab.", "And every hand can help turn a page."],
@@ -158,7 +158,8 @@ export const whatWeDo = {
       image: null as Photo,
     },
     reach:
-      "Rooted in Delhi NCR and now running drives in Mumbai and Bengaluru, we work with communities and partner organisations to bring all of this to children who are too often left out of conversations about opportunity.",
+      "Rooted in Delhi NCR and now running drives in Mumbai and Bangalore, we work with communities and partner organisations to bring all of this to children who are too often left out of conversations about opportunity.",
+    stepsIntro: "Our idea of education is simple.",
     steps: [
       "Give a child knowledge.",
       "Give them skills.",
@@ -232,7 +233,7 @@ export const whoWeAre = {
     title: "We're young, and that's the point.",
     paragraphs: [
       "Project Kitab is a youth-led non-profit started by students with one question: what if every child had the kind of education that lets them do more than pass an exam?",
-      "What began in Delhi NCR is now a community of young changemakers across Delhi, Mumbai and Bengaluru. We are school students, college students, first-time volunteers and seasoned organisers who believe change doesn't have to wait until we're older.",
+      "What began in Delhi NCR is now a community of young changemakers across Delhi, Mumbai and Bangalore. We are school students, college students, first-time volunteers and seasoned organisers who believe change doesn't have to wait until we're older.",
     ],
     beliefTitle: "We don't see children as beneficiaries.",
     belief: [
@@ -283,8 +284,14 @@ export const gallery = {
   title: "Moments That Matter",
   intro: "Some things are better seen than explained.",
   body: "Muddy football boots, a first performance, a borrowed book, a team huddle, a loud laugh. These are the moments behind the mission.",
-  /** Photos for the home-page strip. */
-  strip: [null, null, null, null, null] as Photo[],
+  /** Photos for the home-page strip (from the gallery; wide slots 1 and 5 suit landscape photos). */
+  strip: [
+    { src: "/gallery/full/28.webp", alt: "Volunteers and children with a hand-painted banner" },
+    { src: "/gallery/full/18.webp", alt: "Two children painting together" },
+    { src: "/gallery/full/11.webp", alt: "Young children in winter caps making peace signs" },
+    { src: "/gallery/full/27.webp", alt: "A volunteer carrying a smiling child on his shoulders" },
+    { src: "/gallery/full/cf839473-8994-45ac-8897-7753e4a45fef.webp", alt: "Students cheering and holding up books in a classroom" },
+  ] as Photo[],
 };
 
 export const blog = {
@@ -302,12 +309,9 @@ export const donate = {
   eyebrow: "Donate",
   title: "Your contribution doesn't disappear into a system.",
   impact: [
-    "a book a child reads twice",
-    "a notebook filled to the last page",
-    "a sanitary pad that means a girl doesn't have to miss school",
-    "a football that brings a whole neighbourhood onto the ground",
-    "a summer memory",
-    "a conversation that changes how a child sees themselves",
+    "It becomes a book a child reads twice, or a notebook filled to the last page.",
+    "It becomes a sanitary pad that means a girl doesn't have to miss school, or a football that brings a whole neighbourhood onto the ground.",
+    "It can become a summer memory, or a conversation that changes how a child sees themselves.",
   ],
   closing: "If you believe education should be bigger than a textbook, help us make it bigger.",
   signoff: "Every rupee opens a door.",

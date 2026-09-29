@@ -20,9 +20,9 @@
   --color-body: #3d5257;
   --color-mist: #c9dbde;
 
-  --font-serif: var(--font-source-serif), "Georgia", serif;
-  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-hand: var(--font-caveat), "Comic Sans MS", cursive;
+  --font-serif: var(--font-rozha), "Georgia", serif;
+  --font-sans: var(--font-martel-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-hand: var(--font-gochi), "Comic Sans MS", cursive;
 
   --container-page: 76rem;
 }
@@ -37,6 +37,8 @@
     background: var(--color-cream);
     color: var(--color-body);
     font-family: var(--font-sans);
+    /* Never fake bold: Rozha One and Gochi Hand ship one weight, so semibold uses the real face. */
+    font-synthesis-weight: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -100,7 +102,7 @@
 
   .display {
     font-family: var(--font-serif);
-    font-weight: 600;
+    font-weight: 400; /* Rozha One has a single weight */
     letter-spacing: -0.015em;
     line-height: 1.02;
     font-optical-sizing: auto;

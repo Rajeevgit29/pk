@@ -6,7 +6,7 @@ import { PhotoTile } from "../PhotoTile";
 export function WhoWeAre() {
   return (
     <section aria-labelledby="wwa-title" className="paper relative py-24 lg:py-28">
-      <div className="page-container grid items-center gap-12 lg:grid-cols-[minmax(0,22rem)_1fr_auto] lg:gap-12">
+      <div className="page-container grid items-center gap-12 lg:grid-cols-[minmax(0,22rem)_1fr] lg:gap-12 xl:grid-cols-[minmax(0,22rem)_1fr_auto]">
         <div>
           <p className="eyebrow text-ocean">{whoWeAre.eyebrow}</p>
           <h2 id="wwa-title" className="display mt-4 text-[clamp(2.5rem,4.2vw,3.7rem)] text-heading">
@@ -35,7 +35,7 @@ export function WhoWeAre() {
           <TornEdge color="var(--color-cream)" side="bottom" inward seed={37} height={22} />
         </div>
 
-        <WordStack words={whoWeAre.words} className="hidden lg:block" />
+        <WordStack words={whoWeAre.words} className="hidden xl:block" />
       </div>
     </section>
   );

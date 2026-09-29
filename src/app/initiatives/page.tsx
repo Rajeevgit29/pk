@@ -46,7 +46,7 @@ export default function InitiativesPage() {
         </ul>
       </section>
 
-      <CtaBand title="Want to bring an initiative to your school or community?" body="We work with schools, communities and partner organisations across Delhi NCR, Mumbai and Bengaluru." />
+      <CtaBand title="Want to bring an initiative to your school or community?" body="We work with schools, communities and partner organisations across Delhi NCR, Mumbai and Bangalore." />
     </>
   );
 }

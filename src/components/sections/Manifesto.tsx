@@ -10,7 +10,7 @@ export function Manifesto() {
             {manifesto.lead}
           </h2>
         </div>
-        <div className="space-y-5 text-[1.04rem] leading-relaxed lg:col-span-6 lg:col-start-7 lg:pt-10">
+        <div className="min-w-0 space-y-5 text-[1.04rem] leading-relaxed lg:col-span-6 lg:col-start-7 lg:pt-10">
           {manifesto.paragraphs.map((p) => (
             <p key={p.slice(0, 24)}>{p}</p>
           ))}
@@ -18,7 +18,8 @@ export function Manifesto() {
             {manifesto.quote[0]} <em className="text-ocean">{manifesto.quote[1]}</em>
           </blockquote>
           <p className="font-hand text-[1.7rem] leading-tight text-deep">
-            {manifesto.signoff[0]} <span className="whitespace-nowrap">{manifesto.signoff[1]}</span>
+            <span className="block">{manifesto.signoff[0]}</span>
+            <span className="block">{manifesto.signoff[1]}</span>
           </p>
         </div>
       </div>

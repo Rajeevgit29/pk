@@ -28,7 +28,7 @@ export function ButtonLink({
   className?: string;
 }) {
   const external = /^https?:\/\//.test(href);
-  const cls = `group inline-flex items-center justify-center gap-2 rounded-[4px] font-medium transition-colors duration-200 ${
+  const cls = `group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-[4px] font-medium transition-colors duration-200 ${
     size === "sm" ? "h-10 px-5 text-sm" : "h-12 px-7 text-[0.95rem]"
   } ${styles[variant]} ${className}`;
   const content = (

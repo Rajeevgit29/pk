@@ -34,7 +34,7 @@ export function Initiatives() {
           />
         </div>
 
-        <ul className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3 xl:grid-cols-6">
+        <ul className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 xl:grid-cols-6">
           {initiatives.items.map((item) => (
             <li key={item.title}>
               <Link
@@ -48,7 +48,7 @@ export function Initiatives() {
                     tone="ocean"
                     showLabel={false}
                     label={`${item.title} (photo coming soon)`}
-                    sizes="(min-width: 1280px) 16vw, (min-width: 1024px) 30vw, 48vw"
+                    sizes="(min-width: 1280px) 16vw, (min-width: 768px) 30vw, 48vw"
                     className="aspect-[4/3] transition-transform duration-500 group-hover:scale-[1.04]"
                   />
                 </div>

@@ -44,3 +44,4 @@ next-env.d.ts
 /photos/gallery/*
 !/photos/gallery/.gitkeep
 !/photos/gallery/captions.json
+!/photos/gallery/rotate.json

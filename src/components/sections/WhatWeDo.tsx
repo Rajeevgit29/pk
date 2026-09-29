@@ -36,7 +36,7 @@ export function WhatWeDo() {
             <WordStack words={whatWeDo.words} />
           </div>
 
-          <ul className="mt-2 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:mt-auto lg:grid-cols-6 lg:gap-3.5">
+          <ul className="mt-2 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:mt-auto xl:grid-cols-6 xl:gap-3.5">
             {whatWeDo.cards.map((card) => (
               <li key={card.title}>
                 <Link
@@ -49,7 +49,7 @@ export function WhatWeDo() {
                       icon={card.icon}
                       showLabel={false}
                       label={`${card.title} (photo coming soon)`}
-                      sizes="(min-width: 1024px) 12vw, (min-width: 640px) 30vw, 45vw"
+                      sizes="(min-width: 1280px) 12vw, (min-width: 1024px) 20vw, (min-width: 640px) 30vw, 45vw"
                       className="aspect-[4/3.6] transition-transform duration-500 group-hover:scale-[1.04]"
                     />
                   </div>

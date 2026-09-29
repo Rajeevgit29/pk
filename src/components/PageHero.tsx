@@ -27,7 +27,7 @@ export function PageHero({
             lines={note}
             arrow="swirl-down-left"
             rotate={-8}
-            className="absolute right-6 top-0 hidden text-white/90 lg:block"
+            className="absolute right-6 top-0 hidden text-white/90 xl:block"
             textClassName="text-[2.1rem]"
             arrowClassName="ml-8"
           />

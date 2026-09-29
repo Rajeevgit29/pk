@@ -37,7 +37,7 @@ export default function GalleryPage() {
           />
         </div>
 
-        <div className="relative mt-6 h-[82svh] min-h-[32rem] w-full">
+        <div className="relative mt-6 h-[66svh] min-h-[28rem] w-full sm:h-[82svh] sm:min-h-[32rem]">
           <DomeGallery
             images={domeImages}
             overlayBlurColor="#011f27"

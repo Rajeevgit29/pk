@@ -4,7 +4,7 @@
  * Dome Gallery, from React Bits (https://reactbits.dev/components/dome-gallery, MIT).
  * Adapted for Project Kitab:
  *  - tiles show a light thumbnail; clicking opens the full-quality photo (`full`)
- *  - whole photo is shown when enlarged (no square crop), in colour by default
+ *  - an opened photo gets a box with its own shape (no square crop, no empty bands), in colour by default
  *  - tiles open with Enter/Space for keyboard users
  *  - root uses <div> (the page already has a <main>)
  */
@@ -12,7 +12,7 @@ import React, { useEffect, useMemo, useRef, useCallback } from 'react';
 import { useGesture } from '@use-gesture/react';
 import './DomeGallery.css';
 
-export type ImageItem = string | { src: string; alt?: string; full?: string };
+export type ImageItem = string | { src: string; alt?: string; full?: string; width?: number; height?: number };
 
 type DomeGalleryProps = {
   images?: ImageItem[];
@@ -38,6 +38,8 @@ type ItemDef = {
   src: string;
   full: string;
   alt: string;
+  /** width / height of the photo, 0 if unknown */
+  ratio: number;
   x: number;
   y: number;
   sizeX: number;
@@ -106,7 +108,7 @@ function buildItems(pool: ImageItem[], seg: number): ItemDef[] {
 
   const totalSlots = coords.length;
   if (pool.length === 0) {
-    return coords.map(c => ({ ...c, src: '', full: '', alt: '' }));
+    return coords.map(c => ({ ...c, src: '', full: '', alt: '', ratio: 0 }));
   }
   if (pool.length > totalSlots) {
     console.warn(
@@ -116,9 +118,10 @@ function buildItems(pool: ImageItem[], seg: number): ItemDef[] {
 
   const normalizedImages = pool.map(image => {
     if (typeof image === 'string') {
-      return { src: image, full: image, alt: '' };
+      return { src: image, full: image, alt: '', ratio: 0 };
     }
-    return { src: image.src || '', full: image.full || image.src || '', alt: image.alt || '' };
+    const ratio = image.width && image.height ? image.width / image.height : 0;
+    return { src: image.src || '', full: image.full || image.src || '', alt: image.alt || '', ratio };
   });
 
   const usedImages = Array.from({ length: totalSlots }, (_, i) => normalizedImages[i % normalizedImages.length]);
@@ -140,8 +143,24 @@ function buildItems(pool: ImageItem[], seg: number): ItemDef[] {
     ...c,
     src: usedImages[i].src,
     full: usedImages[i].full,
-    alt: usedImages[i].alt
+    alt: usedImages[i].alt,
+    ratio: usedImages[i].ratio
   }));
+}
+
+/**
+ * Size of an opened photo: the largest box with the photo's own shape that fits inside
+ * the `maxWidth` × `maxHeight` CSS limits, so there are no empty bands around it.
+ */
+function openedSize(ratio: number, maxWidth: string, maxHeight: string) {
+  const probe = document.createElement('div');
+  probe.style.cssText = `position:absolute;visibility:hidden;width:${maxWidth};height:${maxHeight};`;
+  document.body.appendChild(probe);
+  const { width: maxW, height: maxH } = probe.getBoundingClientRect();
+  document.body.removeChild(probe);
+  if (!ratio) return { width: maxW, height: maxH };
+  const width = Math.min(maxW, maxH * ratio);
+  return { width, height: width / ratio };
 }
 
 function computeItemBaseRotation(offsetX: number, offsetY: number, sizeX: number, sizeY: number, segments: number) {
@@ -177,6 +196,7 @@ export default function DomeGallery({
   const viewerRef = useRef<HTMLDivElement>(null);
   const scrimRef = useRef<HTMLDivElement>(null);
   const focusedElRef = useRef<HTMLElement | null>(null);
+  const openedRatioRef = useRef(0);
   const originalTilePositionRef = useRef<{
     left: number;
     top: number;
@@ -268,17 +288,14 @@ export default function DomeGallery({
 
         const hasCustomSize = openedImageWidth && openedImageHeight;
         if (hasCustomSize) {
-          const tempDiv = document.createElement('div');
-          tempDiv.style.cssText = `position: absolute; width: ${openedImageWidth}; height: ${openedImageHeight}; visibility: hidden;`;
-          document.body.appendChild(tempDiv);
-          const tempRect = tempDiv.getBoundingClientRect();
-          document.body.removeChild(tempDiv);
-
-          const centeredLeft = frameR.left - mainR.left + (frameR.width - tempRect.width) / 2;
-          const centeredTop = frameR.top - mainR.top + (frameR.height - tempRect.height) / 2;
+          const size = openedSize(openedRatioRef.current, openedImageWidth, openedImageHeight);
+          const centeredLeft = frameR.left - mainR.left + (frameR.width - size.width) / 2;
+          const centeredTop = frameR.top - mainR.top + (frameR.height - size.height) / 2;
 
           enlargedOverlay.style.left = `${centeredLeft}px`;
           enlargedOverlay.style.top = `${centeredTop}px`;
+          enlargedOverlay.style.width = `${size.width}px`;
+          enlargedOverlay.style.height = `${size.height}px`;
         } else {
           enlargedOverlay.style.left = `${frameR.left - mainR.left}px`;
           enlargedOverlay.style.top = `${frameR.top - mainR.top}px`;
@@ -415,9 +432,17 @@ export default function DomeGallery({
     if (openingRef.current) return;
     openingRef.current = true;
     openStartedAtRef.current = performance.now();
+
+    // If the gallery is partly off screen, bring it fully into view first so the opened
+    // photo (sized to the viewer) is never cut off by the edge of the window.
+    const rootRect = rootRef.current?.getBoundingClientRect();
+    if (rootRect && (rootRect.top < 0 || rootRect.bottom > window.innerHeight)) {
+      window.scrollBy({ top: rootRect.top + rootRect.height / 2 - window.innerHeight / 2, behavior: 'instant' });
+    }
     lockScroll();
 
     const parent = el.parentElement as HTMLElement;
+    openedRatioRef.current = getDataNumber(parent, 'ratio', 0);
     focusedElRef.current = el;
     el.setAttribute('data-focused', 'true');
 
@@ -509,8 +534,13 @@ export default function DomeGallery({
         overlay.removeEventListener('transitionend', onFirstEnd);
         const prevTransition = overlay.style.transition;
         overlay.style.transition = 'none';
-        const tempWidth = openedImageWidth || `${frameR.width}px`;
-        const tempHeight = openedImageHeight || `${frameR.height}px`;
+        const size = openedSize(
+          openedRatioRef.current,
+          openedImageWidth || `${frameR.width}px`,
+          openedImageHeight || `${frameR.height}px`
+        );
+        const tempWidth = `${size.width}px`;
+        const tempHeight = `${size.height}px`;
         overlay.style.width = tempWidth;
         overlay.style.height = tempHeight;
         const newRect = overlay.getBoundingClientRect();
@@ -740,6 +770,7 @@ export default function DomeGallery({
                 className="item"
                 data-src={it.src}
                 data-full={it.full}
+                data-ratio={it.ratio || undefined}
                 data-offset-x={it.x}
                 data-offset-y={it.y}
                 data-size-x={it.sizeX}

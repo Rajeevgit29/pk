@@ -1,26 +1,30 @@
 import type { Metadata, Viewport } from "next";
-import { Caveat, DM_Sans, Source_Serif_4 } from "next/font/google";
+import { Gochi_Hand, Martel_Sans, Rozha_One } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { site } from "@/content/site";
 import "./globals.css";
 
-const serif = Source_Serif_4({
-  subsets: ["latin"],
-  axes: ["opsz"],
-  variable: "--font-source-serif",
+// "Bold Indian Poster" pairing. Rozha One (Indian Type Foundry) and Martel Sans include
+// Devanagari, so Hindi text like हर हाथ में किताब matches the English.
+const serif = Rozha_One({
+  subsets: ["latin", "devanagari"],
+  weight: "400",
+  variable: "--font-rozha",
   display: "swap",
 });
 
-const sans = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-dm-sans",
+const sans = Martel_Sans({
+  subsets: ["latin", "devanagari"],
+  weight: ["400", "600", "700"],
+  variable: "--font-martel-sans",
   display: "swap",
 });
 
-const hand = Caveat({
+const hand = Gochi_Hand({
   subsets: ["latin"],
-  variable: "--font-caveat",
+  weight: "400",
+  variable: "--font-gochi",
   display: "swap",
 });
 

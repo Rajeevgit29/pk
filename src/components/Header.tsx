@@ -63,8 +63,8 @@ export function Header() {
           />
         </Link>
 
-        <nav aria-label="Main" className="hidden lg:block">
-          <ul className="flex items-center gap-7 xl:gap-10">
+        <nav aria-label="Main" className="hidden xl:block">
+          <ul className="flex items-center gap-8 2xl:gap-10">
             {nav.map((item) => {
               const active = isActive(pathname, item.href);
               return (
@@ -72,7 +72,7 @@ export function Header() {
                   <Link
                     href={item.href}
                     aria-current={active ? "page" : undefined}
-                    className={`relative py-2 text-[0.92rem] transition-colors ${
+                    className={`relative whitespace-nowrap py-2 text-[0.92rem] transition-colors ${
                       active ? "text-white" : "text-white/85 hover:text-white"
                     }`}
                   >
@@ -90,7 +90,7 @@ export function Header() {
           </ul>
         </nav>
 
-        <div className="hidden items-center gap-4 lg:flex">
+        <div className="hidden items-center gap-4 xl:flex">
           <ButtonLink href="/get-involved" variant="outline-light" size="sm" className="h-11 px-6">
             Get Involved
           </ButtonLink>
@@ -99,7 +99,7 @@ export function Header() {
           </ButtonLink>
         </div>
 
-        <div className="flex items-center gap-3 lg:hidden">
+        <div className="flex items-center gap-3 xl:hidden">
           <ButtonLink href="/donate" size="sm" className="h-9 px-4 text-[0.82rem]">
             Donate
           </ButtonLink>
@@ -119,7 +119,7 @@ export function Header() {
       <div
         id="mobile-menu"
         hidden={!open}
-        className="h-[calc(100dvh-4.5rem)] overflow-y-auto border-t border-white/10 bg-abyss lg:hidden"
+        className="h-[calc(100dvh-4.5rem)] overflow-y-auto border-t border-white/10 bg-abyss xl:hidden"
       >
         <nav aria-label="Mobile" className="page-container flex min-h-full flex-col py-8">
           <ul className="space-y-1">

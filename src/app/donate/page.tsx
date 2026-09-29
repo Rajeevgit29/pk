@@ -19,13 +19,13 @@ export default function DonatePage() {
       <section aria-labelledby="impact-title" className="paper relative py-24 lg:py-28">
         <div className="page-container grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <h2 id="impact-title" className="display text-[clamp(2rem,3.4vw,3rem)] text-heading">
-              It becomes…
+            <h2 id="impact-title" className="sr-only">
+              Where your donation goes
             </h2>
-            <ul className="mt-8 divide-y divide-line border-y border-line">
+            <ul className="divide-y divide-line border-y border-line">
               {donate.impact.map((line) => (
-                <li key={line} className="py-4 font-serif text-[clamp(1.2rem,1.8vw,1.5rem)] leading-snug text-heading">
-                  {line[0].toUpperCase() + line.slice(1)}.
+                <li key={line} className="py-5 font-serif text-[clamp(1.25rem,1.9vw,1.6rem)] leading-snug text-heading">
+                  {line}
                 </li>
               ))}
             </ul>

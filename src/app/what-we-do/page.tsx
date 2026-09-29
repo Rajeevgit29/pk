@@ -68,7 +68,9 @@ export default function WhatWeDoPage() {
       <section className="paper relative pb-16 pt-28">
         <div className="page-container grid gap-12 lg:grid-cols-12">
           <p className="text-[1.08rem] leading-relaxed lg:col-span-5">{page.reach}</p>
-          <ol className="space-y-3 lg:col-span-6 lg:col-start-7">
+          <div className="lg:col-span-6 lg:col-start-7">
+          <p className="mb-5 font-serif text-[clamp(1.35rem,2.2vw,1.9rem)] leading-snug text-heading">{page.stepsIntro}</p>
+          <ol className="space-y-3">
             {page.steps.map((step, i) => (
               <li
                 key={step}
@@ -81,6 +83,7 @@ export default function WhatWeDoPage() {
               </li>
             ))}
           </ol>
+          </div>
         </div>
       </section>
 

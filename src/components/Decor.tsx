@@ -81,7 +81,7 @@ function HandArrow({ kind, className = "" }: { kind: ArrowKind; className?: stri
   );
 }
 
-/** Handwritten note (Caveat), slightly rotated, with an optional hand-drawn arrow. */
+/** Handwritten note (Gochi Hand), slightly rotated, with an optional hand-drawn arrow. */
 export function HandNote({
   lines,
   arrow,
