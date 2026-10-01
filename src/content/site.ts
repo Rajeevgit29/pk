@@ -151,6 +151,8 @@ export const whatWeDo = {
       { title: "Sport & Creativity", body: "A football, a stage, a microphone, a team.", icon: "football" },
       { title: "The Basics", body: "Menstrual hygiene products and stationery no child should go without.", icon: "sparkle" },
     ] as { title: string; body: string; icon: IconName }[],
+    /** Beside the page title at the top of the What We Do page (gallery photo 18). */
+    heroImage: { src: "/gallery/full/18.webp", alt: "Two children painting together, colourful light across their faces" },
     maidaan: {
       eyebrow: "Gyaan Through Maidaan",
       title: "Learning, on the football field.",
@@ -177,56 +179,75 @@ export const initiatives = {
   intro:
     "Ongoing initiatives, year-round impact. From learning spaces to community programs, we work on multiple fronts to make education more holistic and accessible.",
   note: ["Small", "Steps", "Big Change"],
+  /** Beside the page title at the top of the Our Initiatives page (gallery photo 11). */
+  heroImage: { src: "/gallery/full/11.webp", alt: "Young children in bright winter caps smiling and making peace signs" },
   items: [
     {
       title: "Gyaan Through Maidaan",
       tagline: "Learning on the football field.",
       body: "We take learning onto the football field, where teamwork, discipline and resilience are learnt with every pass.",
       icon: "football",
-      image: null,
+      image: { src: "/images/gyaan-through-maidaan.jpg", alt: "Young players on a football pitch as one of them dribbles the ball forward" },
+      focus: "object-[60%_50%]",
     },
     {
       title: "Kitab Cup",
       tagline: "Conversations. Competitions. Change.",
       body: "A stage, a microphone and a team: competitions and conversations that give children room to be heard.",
       icon: "stage",
-      image: null,
+      image: { src: "/gallery/full/10.webp", alt: "Volunteers at the Project Kitab stall behind the Har Haath Mein Kitab banner" },
+      focus: "object-center",
     },
     {
       title: "Resource & Stationery Drives",
       tagline: "The basics, in every hand.",
       body: "Books, notebooks, stationery and menstrual hygiene products: the basics no one should have to learn without.",
       icon: "pencil",
-      image: null,
+      image: { src: "/gallery/full/cf839473-8994-45ac-8897-7753e4a45fef.webp", alt: "Students cheering and holding up books in a classroom" },
+      focus: "object-center",
     },
     {
       title: "Workshops & Awareness Programs",
       tagline: "What a report card never measures.",
       body: "Sessions on financial literacy, sexual health and consent, ethics, equity and soft skills.",
       icon: "megaphone",
-      image: null,
+      image: { src: "/gallery/full/img-2724.webp", alt: "A volunteer teaching a class of students at their desks" },
+      focus: "object-[95%_50%]",
     },
     {
       title: "Educational Learning Spaces",
       tagline: "Safe spaces to learn and grow.",
       body: "Bringing books and classrooms closer, with safe, open and empowering spaces to learn, unlearn and grow.",
       icon: "home",
-      image: null,
+      image: { src: "/gallery/full/17.webp", alt: "Children drawing and writing on mats, seen from above" },
+      focus: "object-center",
     },
     {
       title: "Mentorship & Guidance",
       tagline: "We listen, and we show up.",
       body: "Young volunteers who listen first, then show up with what each child actually needs.",
       icon: "compass",
-      image: null,
+      image: { src: "/gallery/full/5fdfe642-8db8-438f-adce-8b9b367a0605.webp", alt: "A volunteer helping students in uniform with their work" },
+      focus: "object-center",
     },
-  ] as { title: string; tagline: string; body: string; icon: IconName; image: Photo }[],
+  ] as {
+    title: string;
+    tagline: string;
+    body: string;
+    icon: IconName;
+    image: Photo;
+    /** which part of the photo stays in view when it is cropped to the card */
+    focus?: string;
+  }[],
 };
 
 export const whoWeAre = {
   eyebrow: "Who We Are",
   words: ["Youth-Led", "Inclusive", "Community-Driven", "Impact-Focused", "Always Learning"],
-  image: null as Photo,
+  /** Beside the page title at the top of the Who We Are page (gallery photo 24). */
+  heroImage: { src: "/gallery/full/24.webp", alt: "Two young volunteers laughing together while sitting with children" },
+  /** Next to "We don't see children as beneficiaries" (gallery photo 28). */
+  image: { src: "/gallery/full/28.webp", alt: "Project Kitab volunteers and children gathered in front of a hand-painted banner" } as Photo,
   page: {
     title: "We're young, and that's the point.",
     paragraphs: [

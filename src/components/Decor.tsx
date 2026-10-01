@@ -57,7 +57,7 @@ export function TornEdge({
       className={`pointer-events-none absolute inset-x-0 z-10 w-full ${className}`}
       style={{
         height,
-        [side]: inward ? 0 : -height + 1,
+        [side]: inward ? -1 : -height + 1,
         transform: flip ? "scaleY(-1)" : undefined,
       }}
     >

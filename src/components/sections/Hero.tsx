@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { hero } from "@/content/site";
-import { ButtonLink } from "../ButtonLink";
 import { HandNote } from "../Decor";
 
 export function Hero() {
@@ -44,11 +43,6 @@ export function Hero() {
             ))}
           </div>
 
-          <div className="mt-7">
-            <ButtonLink href="/get-involved" arrow className="px-8">
-              Get Involved
-            </ButtonLink>
-          </div>
         </div>
       </div>
 

@@ -13,7 +13,7 @@ export default function WhoWeArePage() {
   const { page } = whoWeAre;
   return (
     <>
-      <PageHero eyebrow="Who We Are" title={page.title} note={["Young", "People.", "Real Change."]}>
+      <PageHero eyebrow="Who We Are" title={page.title} note={["Young People.", "Real Change."]} image={whoWeAre.heroImage}>
         <div className="mt-6 max-w-2xl space-y-4 text-[1.05rem] leading-relaxed text-white/85">
           {page.paragraphs.map((p) => (
             <p key={p.slice(0, 24)}>{p}</p>

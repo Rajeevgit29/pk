@@ -191,7 +191,8 @@
   height: 120px;
   z-index: 5;
   pointer-events: none;
-  background: linear-gradient(to bottom, transparent, var(--overlay-blur-color, #120F17));
+  /* reach the solid colour a little before the edge so no sliver of tile shows on the last pixel row */
+  background: linear-gradient(to bottom, transparent, var(--overlay-blur-color, #120F17) 85%);
 }
 
 .edge-fade--top {

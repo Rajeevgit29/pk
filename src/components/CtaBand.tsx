@@ -17,12 +17,10 @@ export function CtaBand({
             <h2 className="display text-[clamp(1.9rem,3.2vw,2.8rem)]">{title}</h2>
             <p className="mt-4 leading-relaxed text-white/80">{body}</p>
           </div>
-          <div className="mt-8 flex flex-wrap gap-3 lg:mt-0 lg:shrink-0">
-            <ButtonLink href="/get-involved" variant="outline-light" arrow>
+          {/* Only Get Involved here; the Donate page is reached from the Donate buttons in the header and footer. */}
+          <div className="mt-8 lg:mt-0 lg:shrink-0">
+            <ButtonLink href="/get-involved" arrow>
               Get Involved
-            </ButtonLink>
-            <ButtonLink href="/donate" arrow>
-              Donate
             </ButtonLink>
           </div>
           <HandNote

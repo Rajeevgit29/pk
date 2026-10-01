@@ -14,7 +14,7 @@ export default function WhatWeDoPage() {
   const { page } = whatWeDo;
   return (
     <>
-      <PageHero eyebrow="What We Do" title={page.title} note={whatWeDo.note}>
+      <PageHero eyebrow="What We Do" title={page.title} note={whatWeDo.note} image={page.heroImage}>
         <div className="mt-6 max-w-2xl space-y-4 text-[1.05rem] leading-relaxed text-white/85">
           {page.paragraphs.map((p) => (
             <p key={p.slice(0, 24)}>{p}</p>

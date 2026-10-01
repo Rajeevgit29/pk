@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import DomeGallery from "@/components/gallery/DomeGallery";
-import { CtaBand } from "@/components/CtaBand";
 import { HandNote } from "@/components/Decor";
 import { Icon } from "@/components/Icon";
 import { domeImages, hasGalleryPhotos } from "@/content/gallery";
@@ -58,8 +57,6 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      <div className="h-24 bg-abyss" />
-      <CtaBand title="Be part of the next moment." />
     </>
   );
 }

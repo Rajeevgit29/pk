@@ -14,7 +14,13 @@ export const metadata: Metadata = {
 export default function InitiativesPage() {
   return (
     <>
-      <PageHero eyebrow={initiatives.eyebrow} title={initiatives.title} intro={<p>{initiatives.intro}</p>} note={initiatives.note} />
+      <PageHero
+        eyebrow={initiatives.eyebrow}
+        title={initiatives.title}
+        intro={<p>{initiatives.intro}</p>}
+        note={initiatives.note}
+        image={initiatives.heroImage}
+      />
 
       <section className="paper relative py-24 lg:py-28">
         <ul className="page-container grid gap-6 md:grid-cols-2 lg:gap-8">
@@ -29,6 +35,7 @@ export default function InitiativesPage() {
                 icon={item.icon}
                 tone={i % 2 ? "teal" : "ocean"}
                 label="Photo coming soon"
+                imageClassName={item.focus}
                 sizes="(min-width: 1024px) 22vw, (min-width: 640px) 40vw, 100vw"
                 className="aspect-[4/3] sm:aspect-auto sm:h-full sm:min-h-60"
               />
