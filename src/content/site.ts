@@ -130,6 +130,7 @@ export const whatWeDo = {
   },
   /** Full copy for the What We Do page. */
   page: {
+    heading: "What We Do",
     title: "We don't just put books in children's hands. We put possibilities there.",
     paragraphs: [
       "Education can begin with a book, but it shouldn't end there. Our work covers academics and everything a report card never measures: financial literacy, sexual health and consent, ethics and moral values, equity and equality, soft skills, sport and creativity.",
@@ -138,10 +139,12 @@ export const whatWeDo = {
       "Rooted in Delhi NCR and now running drives in Mumbai and Bangalore, we work with communities and partner organisations to bring all of this to children who are too often left out of conversations about opportunity.",
       "Our idea of education is simple. Give a child knowledge. Give them skills. Give them experiences. Give them a voice. Then give them room to discover who they can become.",
     ],
-    /** Stacked beside the text at the top of the What We Do page (gallery photos 18 and 2). */
-    heroImages: [
-      { src: "/gallery/full/18.webp", alt: "Two children painting together, colourful light across their faces", aspect: "aspect-[4/5]" },
-      { src: "/gallery/full/2.webp", alt: "A child writing “Project Kitab” on a whiteboard", aspect: "aspect-[4/5]" },
+    /** Beside the page title (gallery photo 18). */
+    heroImage: { src: "/gallery/full/18.webp", alt: "Two children painting together, colourful light across their faces" },
+    /** Scrapbook-style photos beside the middle paragraphs (gallery photos 27 and 2). */
+    collage: [
+      { src: "/gallery/full/27.webp", alt: "A volunteer carrying a laughing child on his shoulders" },
+      { src: "/gallery/full/2.webp", alt: "A child writing “Project Kitab” on a whiteboard" },
     ],
   },
 };
