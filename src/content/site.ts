@@ -81,8 +81,8 @@ export const hero = {
   titleLines: ["Har Haath", "Mein Kitab"],
   subtitle: "Education beyond the classroom.",
   body: [
-    "Learning is not limited to textbooks or school hours. We create opportunities for children to explore, participate, make mistakes and discover what they enjoy.",
-    "All of it comes back to one thing: making education more accessible.",
+    "Every child deserves access to opportunities that help them learn, grow and imagine a future for themselves. Yet for many children and communities, quality education remains limited by a lack of resources and access.",
+    "Project Kitab works to bridge that gap by bringing learning, resources and opportunities beyond the classroom to children who are often left out.",
   ],
   note: ["Same", "Books", "Brighter", "Futures"],
   image: {
