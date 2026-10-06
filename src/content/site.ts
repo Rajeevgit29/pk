@@ -134,24 +134,14 @@ export const whatWeDo = {
     paragraphs: [
       "Education can begin with a book, but it shouldn't end there. Our work covers academics and everything a report card never measures: financial literacy, sexual health and consent, ethics and moral values, equity and equality, soft skills, sport and creativity.",
       "Sometimes that means handing a child a book, a notebook or menstrual hygiene products, the basics no one should have to learn without. Sometimes it means teaching something their classroom never had room for. And sometimes it means giving them a football, a stage, a microphone, a team, or simply a space where they feel heard.",
-    ],
-    /** Beside the page title at the top of the What We Do page (gallery photo 18). */
-    heroImage: { src: "/gallery/full/18.webp", alt: "Two children painting together, colourful light across their faces" },
-    maidaan: {
-      title: "Gyaan Through Maidaan",
-      body: "Through Gyaan Through Maidaan, we take learning onto the football field, where teamwork, discipline and resilience are learnt with every pass.",
-      /** From IMG_1643.jpeg; the camera's date stamp was cropped off the bottom. */
-      image: { src: "/images/gyaan-through-maidaan.jpg", alt: "Young players on a football pitch as one of them dribbles the ball forward" } as Photo,
-    },
-    reach:
+      "Through Gyaan Through Maidaan, we take learning onto the football field, where teamwork, discipline and resilience are learnt with every pass.",
       "Rooted in Delhi NCR and now running drives in Mumbai and Bangalore, we work with communities and partner organisations to bring all of this to children who are too often left out of conversations about opportunity.",
-    stepsIntro: "Our idea of education is simple.",
-    steps: [
-      "Give a child knowledge.",
-      "Give them skills.",
-      "Give them experiences.",
-      "Give them a voice.",
-      "Then give them room to discover who they can become.",
+      "Our idea of education is simple. Give a child knowledge. Give them skills. Give them experiences. Give them a voice. Then give them room to discover who they can become.",
+    ],
+    /** Stacked beside the text at the top of the What We Do page (gallery photos 18 and 2). */
+    heroImages: [
+      { src: "/gallery/full/18.webp", alt: "Two children painting together, colourful light across their faces", aspect: "aspect-[4/5]" },
+      { src: "/gallery/full/2.webp", alt: "A child writing “Project Kitab” on a whiteboard", aspect: "aspect-[4/5]" },
     ],
   },
 };
