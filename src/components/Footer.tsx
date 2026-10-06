@@ -28,7 +28,7 @@ export function Footer() {
           </Link>
 
           <nav aria-label="Footer">
-            <ul className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm sm:grid-cols-4 lg:flex lg:flex-wrap lg:justify-center lg:gap-x-9 lg:pt-7">
+            <ul className="grid grid-cols-2 gap-x-8 gap-y-3 text-[0.95rem] sm:grid-cols-4 lg:flex lg:flex-wrap lg:justify-center lg:gap-x-9 lg:pt-7">
               {footerNav.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className="transition-colors hover:text-white">
@@ -74,7 +74,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Project Kitab. All rights reserved.</p>
           <p>{site.footerLine}</p>
         </div>

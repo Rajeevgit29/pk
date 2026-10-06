@@ -5,7 +5,6 @@ export default function NotFound() {
   return (
     <>
       <PageHero
-        eyebrow="Page not found"
         title="This page seems to have slipped out of the book."
         intro={<p>The link may be old, or the page may have moved.</p>}
       >

@@ -37,7 +37,7 @@ export function Hero() {
             ))}
           </h1>
           <p className="mt-5 font-serif text-[clamp(1.4rem,1.85vw,1.95rem)] leading-tight text-white">{hero.subtitle}</p>
-          <div className="mt-3 max-w-[31rem] space-y-2 text-[0.98rem] leading-relaxed text-white/85 sm:text-[1.05rem]">
+          <div className="copy mt-3 max-w-[34rem] space-y-2 text-white/90">
             {hero.body.map((p) => (
               <p key={p.slice(0, 24)}>{p}</p>
             ))}

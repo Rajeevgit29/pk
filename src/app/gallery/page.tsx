@@ -16,13 +16,12 @@ export default function GalleryPage() {
       <section aria-labelledby="gallery-page-title" className="on-dark relative bg-abyss pt-32 text-white lg:pt-40">
         <div className="page-container relative flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
-            <p className="eyebrow text-white/75">{gallery.eyebrow}</p>
-            <h1 id="gallery-page-title" className="display mt-4 text-[clamp(2.4rem,5vw,4.4rem)]">
+            <h1 id="gallery-page-title" className="display text-[clamp(2.4rem,5vw,4.4rem)]">
               {gallery.intro}
             </h1>
-            <p className="mt-6 text-[1.05rem] leading-relaxed text-white/80">{gallery.body}</p>
+            <p className="mt-6 copy text-white/80">{gallery.body}</p>
           </div>
-          <p className="flex items-center gap-2 text-sm text-white/60">
+          <p className="flex items-center gap-2 text-[0.95rem] text-white/75">
             <Icon name="arrow" className="size-4 rotate-180" />
             Drag to explore · Click a photo to open it
             <Icon name="arrow" className="size-4" />

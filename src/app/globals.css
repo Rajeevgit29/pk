@@ -37,6 +37,9 @@
     background: var(--color-cream);
     color: var(--color-body);
     font-family: var(--font-sans);
+    /* 17px base so un-styled text (card descriptions, notes) is comfortable to read */
+    font-size: 1.0625rem;
+    line-height: 1.6;
     /* Never fake bold: Rozha One and Gochi Hand ship one weight, so semibold uses the real face. */
     font-synthesis-weight: none;
     -webkit-font-smoothing: antialiased;
@@ -94,10 +97,24 @@
 
   .eyebrow {
     font-family: var(--font-sans);
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.22em;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
+  }
+
+  /* Reading text: paragraphs grow from 17px on phones to 19px on large screens. */
+  .copy {
+    font-size: clamp(1.0625rem, 0.99rem + 0.3vw, 1.1875rem);
+    line-height: 1.7;
+    /* keep lines to a comfortable ~70 characters (a max-w-* utility can still override) */
+    max-width: 40rem;
+  }
+
+  /* Secondary text: card descriptions, helper notes (16–17px). */
+  .copy-sm {
+    font-size: clamp(1rem, 0.97rem + 0.12vw, 1.0625rem);
+    line-height: 1.65;
   }
 
   .display {

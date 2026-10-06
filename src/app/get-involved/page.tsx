@@ -16,15 +16,15 @@ export default function GetInvolvedPage() {
 
   return (
     <>
-      <PageHero eyebrow={getInvolved.eyebrow} title={page.title} note={getInvolved.words}>
-        <div className="mt-6 max-w-2xl space-y-4 text-[1.05rem] leading-relaxed text-white/85">
+      <PageHero title={page.title} note={getInvolved.words}>
+        <div className="mt-6 max-w-[38rem] space-y-5 copy text-white/85">
           <p>{page.paragraphs[0]}</p>
         </div>
       </PageHero>
 
       <section aria-labelledby="ways-title" className="paper relative py-24 lg:py-28">
         <div className="page-container grid gap-14 lg:grid-cols-12">
-          <div className="space-y-4 text-[1.04rem] leading-relaxed lg:col-span-5">
+          <div className="space-y-5 copy lg:col-span-5">
             <h2 id="ways-title" className="display text-[clamp(2rem,3.4vw,3rem)] text-heading">
               Ways to be part of it
             </h2>
@@ -58,15 +58,14 @@ export default function GetInvolvedPage() {
         <div className="page-container">
           <div className="on-dark teal-glow grid gap-10 rounded-lg px-6 py-14 text-white sm:px-12 lg:grid-cols-2 lg:px-16">
             <div>
-              <p className="eyebrow text-white/75">Join us</p>
-              <h2 id="join-title" className="display mt-4 text-[clamp(2rem,3.4vw,3rem)]">
+              <h2 id="join-title" className="display text-[clamp(2rem,3.4vw,3rem)]">
                 {page.closing}
               </h2>
             </div>
             <div className="grid content-center gap-4">
               <div className="rounded-md border border-white/15 bg-abyss/40 p-6">
                 <h3 className="font-serif text-xl font-semibold">Volunteer or join the team</h3>
-                <p className="mt-2 text-sm leading-relaxed text-white/75">
+                <p className="copy-sm mt-2 text-white/80">
                   Teach, organise, coach, write, design or mentor, on the ground or behind the scenes.
                 </p>
                 <ButtonLink href={volunteerHref} arrow size="sm" className="mt-5 h-11">
@@ -75,7 +74,7 @@ export default function GetInvolvedPage() {
               </div>
               <div className="rounded-md border border-white/15 bg-abyss/40 p-6">
                 <h3 className="font-serif text-xl font-semibold">Partner with us</h3>
-                <p className="mt-2 text-sm leading-relaxed text-white/75">
+                <p className="copy-sm mt-2 text-white/80">
                   Schools, organisations and brands: collaborate on workshops, events, campaigns and drives.
                 </p>
                 <ButtonLink href={partnerHref} variant="outline-light" arrow size="sm" className="mt-5 h-11">

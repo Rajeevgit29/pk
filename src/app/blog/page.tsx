@@ -15,7 +15,6 @@ export default function BlogPage() {
   return (
     <>
       <PageHero
-        eyebrow={blog.eyebrow}
         title={blog.title}
         intro={<p>Stories from our classrooms, football fields and communities, written by the people who show up.</p>}
         note={[blog.note]}
@@ -36,7 +35,7 @@ export default function BlogPage() {
                     className="aspect-[16/10]"
                   />
                   <div className="flex flex-1 flex-col gap-4 p-6">
-                    <p className="text-xs font-medium uppercase tracking-[0.18em] text-ocean">{post.date ?? "Coming soon"}</p>
+                    <p className="text-sm font-semibold uppercase tracking-[0.14em] text-ocean">{post.date ?? "Coming soon"}</p>
                     <h2 className="font-serif text-[1.4rem] font-semibold leading-snug text-heading">{post.title}</h2>
                   </div>
                 </article>

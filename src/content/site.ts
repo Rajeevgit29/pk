@@ -104,10 +104,7 @@ export const stats: { value: string; count: number; prefix?: string; label: stri
   { value: "₹15L+", count: 1500000, prefix: "₹", label: "Raised towards our initiatives", icon: "coins" },
 ];
 
-export const reach = {
-  home: "Rooted in Delhi NCR",
-  expanding: "Now running drives in Mumbai & Bangalore",
-};
+export const reach = "Rooted in Delhi, Mumbai & Bangalore";
 
 /** The doc's "Landing Page" copy. */
 export const manifesto = {
@@ -121,12 +118,9 @@ export const manifesto = {
 };
 
 export const whatWeDo = {
-  eyebrow: "What We Do",
   title: ["More Than", "Just Books"],
   intro:
     "We don't just put books in children's hands. We put possibilities there. Education can begin with a book, but it shouldn't end there.",
-  note: ["Education", "Builds Brighter", "Tomorrows"],
-  words: ["Knowledge", "People", "Opportunities", "A Brighter", "Tomorrow"],
   /** Photo beside "More Than Just Books" on the home page (portrait, 1080×1350). */
   image: {
     src: "/images/what-we-do-children.png",
@@ -141,21 +135,10 @@ export const whatWeDo = {
       "Education can begin with a book, but it shouldn't end there. Our work covers academics and everything a report card never measures: financial literacy, sexual health and consent, ethics and moral values, equity and equality, soft skills, sport and creativity.",
       "Sometimes that means handing a child a book, a notebook or menstrual hygiene products, the basics no one should have to learn without. Sometimes it means teaching something their classroom never had room for. And sometimes it means giving them a football, a stage, a microphone, a team, or simply a space where they feel heard.",
     ],
-    areas: [
-      { title: "Academics", body: "Books, notebooks and learning support that bring the classroom closer.", icon: "book" },
-      { title: "Financial Literacy", body: "How money works, and how to make decisions with it.", icon: "rupee" },
-      { title: "Sexual Health & Consent", body: "What consent means, and knowing it's okay to say no.", icon: "heart" },
-      { title: "Ethics & Moral Values", body: "Why fairness matters, and how to stand up for it.", icon: "compass" },
-      { title: "Equity & Equality", body: "Recognising inequality, and refusing to accept it.", icon: "scales" },
-      { title: "Soft Skills", body: "Confidence, communication and teamwork for life beyond school.", icon: "megaphone" },
-      { title: "Sport & Creativity", body: "A football, a stage, a microphone, a team.", icon: "football" },
-      { title: "The Basics", body: "Menstrual hygiene products and stationery no child should go without.", icon: "sparkle" },
-    ] as { title: string; body: string; icon: IconName }[],
     /** Beside the page title at the top of the What We Do page (gallery photo 18). */
     heroImage: { src: "/gallery/full/18.webp", alt: "Two children painting together, colourful light across their faces" },
     maidaan: {
-      eyebrow: "Gyaan Through Maidaan",
-      title: "Learning, on the football field.",
+      title: "Gyaan Through Maidaan",
       body: "Through Gyaan Through Maidaan, we take learning onto the football field, where teamwork, discipline and resilience are learnt with every pass.",
       /** From IMG_1643.jpeg; the camera's date stamp was cropped off the bottom. */
       image: { src: "/images/gyaan-through-maidaan.jpg", alt: "Young players on a football pitch as one of them dribbles the ball forward" } as Photo,
@@ -174,7 +157,6 @@ export const whatWeDo = {
 };
 
 export const initiatives = {
-  eyebrow: "Our Initiatives",
   title: "Ideas in Action",
   intro:
     "Ongoing initiatives, year-round impact. From learning spaces to community programs, we work on multiple fronts to make education more holistic and accessible.",
@@ -242,7 +224,6 @@ export const initiatives = {
 };
 
 export const whoWeAre = {
-  eyebrow: "Who We Are",
   words: ["Youth-Led", "Inclusive", "Community-Driven", "Impact-Focused", "Always Learning"],
   /** Beside the page title at the top of the Who We Are page (gallery photo 24). */
   heroImage: { src: "/gallery/full/24.webp", alt: "Two young volunteers laughing together while sitting with children" },
@@ -266,7 +247,6 @@ export const whoWeAre = {
 };
 
 export const getInvolved = {
-  eyebrow: "Get Involved",
   words: ["Different", "People", "Same Mission"],
   page: {
     title: "There's more than one way to be part of Project Kitab.",
@@ -295,13 +275,11 @@ export const getInvolved = {
 };
 
 export const gallery = {
-  eyebrow: "Gallery",
   intro: "Some things are better seen than explained.",
   body: "Muddy football boots, a first performance, a borrowed book, a team huddle, a loud laugh. These are the moments behind the mission.",
 };
 
 export const blog = {
-  eyebrow: "From Our Blog",
   title: "Ideas, Stories, Perspectives",
   note: "Gyaan se Bantan.",
   posts: [
@@ -312,7 +290,6 @@ export const blog = {
 };
 
 export const donate = {
-  eyebrow: "Donate",
   title: "Your contribution doesn't disappear into a system.",
   impact: [
     "It becomes a book a child reads twice, or a notebook filled to the last page.",

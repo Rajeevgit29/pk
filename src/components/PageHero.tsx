@@ -7,14 +7,12 @@ import { HandNote, TornEdge } from "./Decor";
  * With `image`, the photo sits to the right of the text and the handwritten note moves under the text.
  */
 export function PageHero({
-  eyebrow,
   title,
   intro,
   note,
   image,
   children,
 }: {
-  eyebrow: string;
   title: ReactNode;
   intro?: ReactNode;
   note?: string[];
@@ -31,15 +29,14 @@ export function PageHero({
         }`}
       >
         <div>
-          <p className="eyebrow text-white/75">{eyebrow}</p>
           <h1
-            className={`display mt-4 max-w-4xl ${
+            className={`display max-w-4xl ${
               image ? "text-[clamp(2.3rem,4.2vw,3.7rem)]" : "text-[clamp(2.4rem,5vw,4.4rem)]"
             }`}
           >
             {title}
           </h1>
-          {intro && <div className="mt-6 max-w-2xl text-[1.05rem] leading-relaxed text-white/85">{intro}</div>}
+          {intro && <div className="mt-6 max-w-[38rem] copy text-white/85">{intro}</div>}
           {children}
           {note && image && (
             <HandNote

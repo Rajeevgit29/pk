@@ -15,7 +15,6 @@ export default function InitiativesPage() {
   return (
     <>
       <PageHero
-        eyebrow={initiatives.eyebrow}
         title={initiatives.title}
         intro={<p>{initiatives.intro}</p>}
         note={initiatives.note}
@@ -40,13 +39,13 @@ export default function InitiativesPage() {
                 className="aspect-[4/3] sm:aspect-auto sm:h-full sm:min-h-60"
               />
               <div className="p-6 lg:p-8">
-                <p className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-ocean">
+                <p className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-ocean">
                   <Icon name={item.icon} className="size-4" />
                   0{i + 1}
                 </p>
                 <h2 className="mt-3 font-serif text-[1.6rem] font-semibold leading-tight text-heading">{item.title}</h2>
                 <p className="mt-1 font-hand text-[1.45rem] leading-tight text-deep">{item.tagline}</p>
-                <p className="mt-4 leading-relaxed">{item.body}</p>
+                <p className="copy-sm mt-4">{item.body}</p>
               </div>
             </li>
           ))}

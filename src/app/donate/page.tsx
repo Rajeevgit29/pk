@@ -14,7 +14,7 @@ export default function DonatePage() {
 
   return (
     <>
-      <PageHero eyebrow={donate.eyebrow} title={donate.title} note={["Every", "rupee opens", "a door"]} />
+      <PageHero title={donate.title} note={["Every", "rupee opens", "a door"]} />
 
       <section aria-labelledby="impact-title" className="paper relative py-24 lg:py-28">
         <div className="page-container grid gap-14 lg:grid-cols-12">
@@ -29,7 +29,7 @@ export default function DonatePage() {
                 </li>
               ))}
             </ul>
-            <p className="mt-8 text-[1.08rem] leading-relaxed">{donate.closing}</p>
+            <p className="mt-8 copy">{donate.closing}</p>
             <p className="mt-3 font-hand text-[2.4rem] leading-none text-ocean">{donate.signoff}</p>
           </div>
 
@@ -39,7 +39,7 @@ export default function DonatePage() {
                 How to give
               </h2>
               {hasDetails ? (
-                <div className="mt-6 space-y-6 text-sm">
+                <div className="mt-6 space-y-6 text-[0.95rem]">
                   {donation.paymentLink && (
                     <ButtonLink href={donation.paymentLink} arrow className="w-full">
                       Donate online
@@ -74,7 +74,7 @@ export default function DonatePage() {
                   )}
                 </div>
               ) : (
-                <div className="mt-4 space-y-5 text-[0.95rem] leading-relaxed text-white/80">
+                <div className="copy-sm mt-4 space-y-5 text-white/85">
                   <p>Online donations are opening soon. Until then, message us and we&apos;ll share how you can give.</p>
                   <ButtonLink href={links.instagram} arrow className="w-full">
                     Message us on Instagram

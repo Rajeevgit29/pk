@@ -129,7 +129,7 @@ export function StatsCounter({ stats }: { stats: Stat[] }) {
               {s.value}
             </span>
           </p>
-          <p className="mt-2 max-w-[11rem] text-[0.84rem] leading-snug text-white/80">{s.label}</p>
+          <p className="mt-2 max-w-[12rem] text-[0.95rem] leading-snug text-white/85">{s.label}</p>
         </li>
       ))}
     </ul>

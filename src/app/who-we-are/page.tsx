@@ -13,8 +13,8 @@ export default function WhoWeArePage() {
   const { page } = whoWeAre;
   return (
     <>
-      <PageHero eyebrow="Who We Are" title={page.title} note={["Young People.", "Real Change."]} image={whoWeAre.heroImage}>
-        <div className="mt-6 max-w-2xl space-y-4 text-[1.05rem] leading-relaxed text-white/85">
+      <PageHero title={page.title} note={["Young People.", "Real Change."]} image={whoWeAre.heroImage}>
+        <div className="mt-6 max-w-[38rem] space-y-5 copy text-white/85">
           {page.paragraphs.map((p) => (
             <p key={p.slice(0, 24)}>{p}</p>
           ))}
@@ -36,9 +36,8 @@ export default function WhoWeArePage() {
             <TornEdge color="var(--color-cream)" side="bottom" inward seed={67} height={22} />
           </div>
           <div>
-            <p className="eyebrow text-ocean">What we believe</p>
-            <h2 className="display mt-4 text-[clamp(2rem,3.4vw,3rem)] text-heading">{page.beliefTitle}</h2>
-            <div className="mt-6 space-y-4 text-[1.04rem] leading-relaxed">
+            <h2 className="display text-[clamp(2rem,3.4vw,3rem)] text-heading">{page.beliefTitle}</h2>
+            <div className="mt-6 space-y-5 copy">
               {page.belief.map((p) => (
                 <p key={p.slice(0, 24)}>{p}</p>
               ))}
@@ -50,7 +49,7 @@ export default function WhoWeArePage() {
 
       <section className="paper relative pb-32 pt-4 lg:pt-6">
         <div className="page-container grid gap-10 lg:grid-cols-12">
-          <p className="text-[1.08rem] leading-relaxed lg:col-span-6">{page.needs}</p>
+          <p className="copy lg:col-span-6">{page.needs}</p>
           <blockquote className="lg:col-span-5 lg:col-start-8">
             <p className="font-serif text-[clamp(1.6rem,2.6vw,2.3rem)] leading-snug text-heading">{page.closing[0]}</p>
             <p className="mt-4 font-hand text-[2.4rem] leading-none text-ocean">{page.closing[1]}</p>
