@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { IconName, Photo } from "@/content/site";
 import { Icon } from "./Icon";
+import { assetPath } from "@/lib/asset-path";
 
 /**
  * Shows a real photo when one is set in content/site.ts, otherwise a branded
@@ -31,7 +32,7 @@ export function PhotoTile({
   if (photo) {
     return (
       <div className={`relative overflow-hidden bg-deep ${className}`}>
-        <Image src={photo.src} alt={photo.alt} fill sizes={sizes} className={`object-cover ${imageClassName}`} />
+        <Image src={assetPath(photo.src)} alt={photo.alt} fill sizes={sizes} className={`object-cover ${imageClassName}`} />
       </div>
     );
   }

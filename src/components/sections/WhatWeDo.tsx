@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { whatWeDo } from "@/content/site";
 import { ButtonLink } from "../ButtonLink";
+import { assetPath } from "@/lib/asset-path";
 
 export function WhatWeDo() {
   const { image } = whatWeDo;
@@ -23,7 +24,7 @@ export function WhatWeDo() {
 
         <div className="relative mx-auto aspect-[4/5] w-full max-w-[26rem] overflow-hidden rounded-md bg-deep shadow-[0_24px_50px_-28px_rgb(4_49_60/0.6)] lg:mx-0">
           <Image
-            src={image.src}
+            src={assetPath(image.src)}
             alt={image.alt}
             fill
             sizes="(min-width: 1024px) 26rem, (min-width: 480px) 26rem, 92vw"

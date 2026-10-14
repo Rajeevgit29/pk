@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import { PageHero } from "@/components/PageHero";
 import { whatWeDo } from "@/content/site";
+import { assetPath } from "@/lib/asset-path";
 
 export const metadata: Metadata = {
   title: "What We Do",
@@ -35,7 +36,7 @@ function Polaroid({ src, alt, className, sizes }: { src: string; alt: string; cl
     <figure className={`absolute bg-white p-2.5 pb-8 shadow-[0_18px_40px_-18px_rgb(4_49_60/0.55)] sm:p-3 sm:pb-10 ${className}`}>
       <span aria-hidden="true" className="absolute -top-3 left-1/2 h-6 w-20 -translate-x-1/2 rotate-[-4deg] bg-sand/80 shadow-sm" />
       <div className="relative aspect-[4/5] overflow-hidden bg-cream-deep">
-        <Image src={src} alt={alt} fill sizes={sizes} className="object-cover" />
+        <Image src={assetPath(src)} alt={alt} fill sizes={sizes} className="object-cover" />
       </div>
     </figure>
   );

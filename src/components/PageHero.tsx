@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { HandNote, TornEdge } from "./Decor";
+import { assetPath } from "@/lib/asset-path";
 
 /**
  * Dark teal header band that opens every inner page (the site header sits on top of it).
@@ -64,7 +65,7 @@ export function PageHero({
                 className={`relative ${photo.aspect} w-full overflow-hidden rounded-md bg-deep shadow-[0_30px_60px_-30px_rgb(0_0_0/0.7)]`}
               >
                 <Image
-                  src={photo.src}
+                  src={assetPath(photo.src)}
                   alt={photo.alt}
                   fill
                   preload={i === 0}

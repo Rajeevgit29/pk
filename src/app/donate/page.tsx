@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ButtonLink } from "@/components/ButtonLink";
 import { PageHero } from "@/components/PageHero";
 import { donate, donation, links } from "@/content/site";
+import { assetPath } from "@/lib/asset-path";
 
 export const metadata: Metadata = {
   title: "Donate",
@@ -51,7 +52,7 @@ export default function DonatePage() {
                       <p className="mt-1 select-all font-mono text-base">{donation.upiId}</p>
                       {donation.upiQr && (
                         <Image
-                          src={donation.upiQr}
+                          src={assetPath(donation.upiQr)}
                           alt={`UPI QR code for ${donation.upiId}`}
                           width={220}
                           height={220}

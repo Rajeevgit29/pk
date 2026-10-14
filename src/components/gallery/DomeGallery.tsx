@@ -10,6 +10,7 @@
  */
 import React, { useEffect, useMemo, useRef, useCallback } from 'react';
 import { useGesture } from '@use-gesture/react';
+import { assetPath } from '@/lib/asset-path';
 import './DomeGallery.css';
 
 export type ImageItem = string | { src: string; alt?: string; full?: string; width?: number; height?: number };
@@ -768,7 +769,7 @@ export default function DomeGallery({
               <div
                 key={`${it.x},${it.y},${i}`}
                 className="item"
-                data-src={it.src}
+                data-src={assetPath(it.src)}
                 data-full={it.full}
                 data-ratio={it.ratio || undefined}
                 data-offset-x={it.x}
@@ -795,7 +796,7 @@ export default function DomeGallery({
                 >
                   {/* Plain <img>: tiles live inside CSS 3D transforms; thumbnails are pre-optimised by `npm run gallery`. */}
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={it.src} draggable={false} alt={it.alt} loading="lazy" decoding="async" />
+                  <img src={assetPath(it.src)} draggable={false} alt={it.alt} loading="lazy" decoding="async" />
                 </div>
               </div>
             ))}

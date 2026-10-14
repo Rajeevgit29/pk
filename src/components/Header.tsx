@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { nav } from "@/content/site";
 import { ButtonLink } from "./ButtonLink";
 import { Icon } from "./Icon";
+import { assetPath } from "@/lib/asset-path";
 
 function isActive(pathname: string, href: string) {
   return href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
@@ -54,7 +55,7 @@ export function Header() {
       >
         <Link href="/" aria-label="Project Kitab — home" className="shrink-0">
           <Image
-            src="/brand/logo-white.svg"
+            src={assetPath("/brand/logo-white.svg")}
             alt="Project Kitab"
             width={1540}
             height={950}

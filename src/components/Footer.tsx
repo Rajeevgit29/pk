@@ -3,6 +3,7 @@ import Link from "next/link";
 import { contact, links, nav, site } from "@/content/site";
 import { TornEdge } from "./Decor";
 import { Icon } from "./Icon";
+import { assetPath } from "@/lib/asset-path";
 
 export function Footer() {
   const socials = [
@@ -24,7 +25,7 @@ export function Footer() {
       <div className="page-container pb-10 pt-16 lg:pt-20">
         <div className="grid gap-12 lg:grid-cols-[auto_1fr_auto] lg:items-start lg:gap-16">
           <Link href="/" aria-label="Project Kitab — home" className="w-fit">
-            <Image src="/brand/logo-white.svg" alt="Project Kitab" width={1540} height={950} className="h-20 w-auto" />
+            <Image src={assetPath("/brand/logo-white.svg")} alt="Project Kitab" width={1540} height={950} className="h-20 w-auto" />
           </Link>
 
           <nav aria-label="Footer">

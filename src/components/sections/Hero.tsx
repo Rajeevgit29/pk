@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { hero } from "@/content/site";
 import { HandNote } from "../Decor";
+import { assetPath } from "@/lib/asset-path";
 
 export function Hero() {
   return (
@@ -8,7 +9,7 @@ export function Hero() {
       {/* Photo: full width on mobile, right-hand three quarters on desktop (as in the template). */}
       <div className="absolute inset-x-0 top-0 -z-20 h-[64svh] min-h-[22rem] lg:inset-y-0 lg:left-auto lg:h-auto lg:w-[76%]">
         <Image
-          src={hero.image.src}
+          src={assetPath(hero.image.src)}
           alt={hero.image.alt}
           fill
           preload
