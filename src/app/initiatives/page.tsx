@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { CtaBand } from "@/components/CtaBand";
 import { Icon } from "@/components/Icon";
 import { PhotoBackdropHero } from "@/components/PhotoBackdropHero";
 import { PhotoTile } from "@/components/PhotoTile";
@@ -55,8 +54,6 @@ export default function InitiativesPage() {
           ))}
         </ul>
       </section>
-
-      <CtaBand title="Want to bring an initiative to your school or community?" body="We work with schools, communities and partner organisations across Delhi NCR, Mumbai and Bangalore." />
     </>
   );
 }
