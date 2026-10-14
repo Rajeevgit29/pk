@@ -1,14 +1,36 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import { Icon } from "@/components/Icon";
 import { PhotoBackdropHero } from "@/components/PhotoBackdropHero";
-import { PhotoTile } from "@/components/PhotoTile";
+import { inline } from "@/components/StoryPage";
+import { reports } from "@/content/reports";
 import { initiatives } from "@/content/site";
+import { assetPath } from "@/lib/asset-path";
 import { slugify } from "@/lib/slugify";
 
 export const metadata: Metadata = {
   title: "Our Initiatives",
   description: initiatives.intro,
 };
+
+const box = "relative flex h-full flex-col overflow-hidden rounded-lg border border-line bg-paper";
+
+function BoxPhoto({ photo, className = "", zoom = false }: { photo: { src: string; alt: string } | null; className?: string; zoom?: boolean }) {
+  return (
+    <div className="relative aspect-[16/10] overflow-hidden bg-deep">
+      {photo && (
+        <Image
+          src={assetPath(photo.src)}
+          alt={zoom ? "" : photo.alt}
+          fill
+          sizes="(min-width: 1344px) 26rem, (min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw"
+          className={`object-cover ${zoom ? "transition-transform duration-500 group-hover:scale-[1.03]" : ""} ${className}`}
+        />
+      )}
+    </div>
+  );
+}
 
 export default function InitiativesPage() {
   return (
@@ -24,32 +46,39 @@ export default function InitiativesPage() {
         <p className="mt-6 max-w-[38rem] copy text-white/85">{initiatives.intro}</p>
       </PhotoBackdropHero>
 
-      <section className="paper relative py-24 lg:py-28">
-        <ul className="page-container grid gap-6 md:grid-cols-2 lg:gap-8">
-          {initiatives.items.map((item, i) => (
-            <li
-              key={item.title}
-              id={slugify(item.title)}
-              className="group scroll-mt-28 overflow-hidden rounded-lg border border-line bg-paper sm:grid sm:grid-cols-[0.9fr_1.1fr]"
-            >
-              <PhotoTile
-                photo={item.image}
-                icon={item.icon}
-                tone={i % 2 ? "teal" : "ocean"}
-                label="Photo coming soon"
-                imageClassName={item.focus}
-                sizes="(min-width: 1024px) 22vw, (min-width: 640px) 40vw, 100vw"
-                className="aspect-[4/3] sm:aspect-auto sm:h-full sm:min-h-60"
-              />
-              <div className="p-6 lg:p-8">
-                <p className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-ocean">
-                  <Icon name={item.icon} className="size-4" />
-                  0{i + 1}
-                </p>
-                <h2 className="mt-3 font-serif text-[1.6rem] font-semibold leading-tight text-heading">{item.title}</h2>
-                <p className="mt-1 font-hand text-[1.45rem] leading-tight text-deep">{item.tagline}</p>
-                <p className="copy-sm mt-4">{item.body}</p>
-              </div>
+      {/* Kitab Cup, then the reports: all the same size, three to a row on large screens. */}
+      <section id="reports" aria-label="Initiatives and reports" className="paper relative scroll-mt-24 py-24 lg:py-28">
+        <ul className="page-container grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+          {initiatives.items.map((item) => (
+            <li key={item.title} id={slugify(item.title)} className="scroll-mt-28">
+              <article className={box}>
+                <BoxPhoto photo={item.image} className={item.focus} />
+                <div className="flex flex-1 flex-col p-6 lg:p-7">
+                  <h2 className="font-serif text-[1.45rem] leading-snug text-heading">{item.title}</h2>
+                  <p className="mt-1 font-hand text-[1.35rem] leading-tight text-deep">{item.tagline}</p>
+                  <p className="copy-sm mt-3">{item.body}</p>
+                </div>
+              </article>
+            </li>
+          ))}
+          {reports.map((report) => (
+            <li key={report.slug}>
+              <article className={`group ${box} transition-shadow duration-300 hover:shadow-[0_24px_50px_-28px_rgb(4_49_60/0.45)]`}>
+                <BoxPhoto photo={report.image} zoom />
+                <div className="flex flex-1 flex-col p-6 lg:p-7">
+                  <h2 className="font-serif text-[1.45rem] leading-snug text-heading">
+                    {/* The whole box opens the report. */}
+                    <Link href={`/initiatives/${report.slug}`} className="after:absolute after:inset-0 group-hover:text-deep">
+                      {report.title}
+                    </Link>
+                  </h2>
+                  <p className="copy-sm mt-3 line-clamp-3">{inline(report.paragraphs[0])}</p>
+                  <span aria-hidden="true" className="mt-auto inline-flex items-center gap-2 pt-5 font-semibold text-ocean transition-colors group-hover:text-heading">
+                    Read more
+                    <Icon name="arrow" className="size-4 transition-transform group-hover:translate-x-0.5" />
+                  </span>
+                </div>
+              </article>
             </li>
           ))}
         </ul>
