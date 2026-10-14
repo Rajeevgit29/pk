@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import DomeGallery from "@/components/gallery/DomeGallery";
-import { HandNote } from "@/components/Decor";
 import { Icon } from "@/components/Icon";
 import { domeImages, hasGalleryPhotos } from "@/content/gallery";
 import { gallery } from "@/content/site";
@@ -26,13 +25,6 @@ export default function GalleryPage() {
             Drag to explore · Click a photo to open it
             <Icon name="arrow" className="size-4" />
           </p>
-          <HandNote
-            lines={["Moments", "That Matter"]}
-            arrow="down"
-            className="absolute right-6 -top-6 hidden text-white/85 xl:block"
-            textClassName="text-[2.1rem]"
-            arrowClassName="ml-12"
-          />
         </div>
 
         <div className="relative mt-6 h-[66svh] min-h-[28rem] w-full sm:h-[82svh] sm:min-h-[32rem]">

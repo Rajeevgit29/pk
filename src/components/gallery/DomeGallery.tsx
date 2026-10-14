@@ -770,7 +770,7 @@ export default function DomeGallery({
                 key={`${it.x},${it.y},${i}`}
                 className="item"
                 data-src={assetPath(it.src)}
-                data-full={it.full}
+                data-full={assetPath(it.full)}
                 data-ratio={it.ratio || undefined}
                 data-offset-x={it.x}
                 data-offset-y={it.y}

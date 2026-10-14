@@ -154,8 +154,8 @@ export const initiatives = {
   intro:
     "Ongoing initiatives, year-round impact. From learning spaces to community programs, we work on multiple fronts to make education more holistic and accessible.",
   note: ["Small", "Steps", "Big Change"],
-  /** Beside the page title at the top of the Our Initiatives page (gallery photo 11). */
-  heroImage: { src: "/gallery/full/11.webp", alt: "Young children in bright winter caps smiling and making peace signs" },
+  /** Background of the header at the top of the Our Initiatives page (gallery photo 15). */
+  heroImage: { src: "/gallery/full/15.webp", alt: "Children sitting outdoors with their worksheets, a boy holding up his notebook" },
   items: [
     {
       title: "Gyaan Through Maidaan",
@@ -219,7 +219,7 @@ export const initiatives = {
 export const whoWeAre = {
   words: ["Youth-Led", "Inclusive", "Community-Driven", "Impact-Focused", "Always Learning"],
   /** Beside the page title at the top of the Who We Are page (gallery photo 24). */
-  heroImage: { src: "/gallery/full/24.webp", alt: "Two young volunteers laughing together while sitting with children" },
+  heroImage: { src: "/gallery/full/29.webp", alt: "A young volunteer taking a selfie with smiling girls" },
   /** Next to "We don't see children as beneficiaries" (gallery photo 28). */
   image: { src: "/gallery/full/28.webp", alt: "Project Kitab volunteers and children gathered in front of a hand-painted banner" } as Photo,
   page: {
@@ -274,12 +274,8 @@ export const gallery = {
 
 export const blog = {
   title: "Ideas, Stories, Perspectives",
-  note: "Gyaan se Bantan.",
-  posts: [
-    { title: "Why Life Skills Matter as Much as Academics", date: null, image: null },
-    { title: "Mental Health Conversations in Our Classrooms", date: null, image: null },
-    { title: "Building a More Inclusive Tomorrow", date: null, image: null },
-  ] as { title: string; date: string | null; image: Photo }[],
+  intro: "Stories from our classrooms, football fields and communities, written by the people who show up.",
+  // The posts themselves live in content/blog.ts.
 };
 
 export const donate = {

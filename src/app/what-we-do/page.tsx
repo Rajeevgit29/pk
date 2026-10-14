@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { PageHero } from "@/components/PageHero";
+import { PhotoBackdropHero } from "@/components/PhotoBackdropHero";
 import { whatWeDo } from "@/content/site";
 import { assetPath } from "@/lib/asset-path";
 
@@ -51,10 +51,15 @@ export default function WhatWeDoPage() {
 
   return (
     <>
-      <PageHero title={page.heading} image={page.heroImage}>
+      <PhotoBackdropHero
+        id="what-title"
+        title={page.heading}
+        image={page.heroImage}
+        imageClassName="object-[50%_25%] lg:object-[50%_8%]"
+      >
         <p className="mt-5 max-w-[34rem] font-serif text-[clamp(1.45rem,2.2vw,2rem)] leading-snug text-white">{page.title}</p>
         <p className="mt-5 max-w-[38rem] copy text-white/85">{opening}</p>
-      </PageHero>
+      </PhotoBackdropHero>
 
       <section className="paper relative overflow-x-clip pb-32 pt-24 lg:pb-36 lg:pt-32">
         <div className="page-container grid items-center gap-16 lg:grid-cols-[minmax(0,27rem)_minmax(0,1fr)] lg:gap-20">

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CtaBand } from "@/components/CtaBand";
 import { Icon } from "@/components/Icon";
-import { PageHero } from "@/components/PageHero";
+import { PhotoBackdropHero } from "@/components/PhotoBackdropHero";
 import { PhotoTile } from "@/components/PhotoTile";
 import { initiatives } from "@/content/site";
 import { slugify } from "@/lib/slugify";
@@ -14,12 +14,16 @@ export const metadata: Metadata = {
 export default function InitiativesPage() {
   return (
     <>
-      <PageHero
+      <PhotoBackdropHero
+        id="initiatives-title"
         title={initiatives.title}
-        intro={<p>{initiatives.intro}</p>}
-        note={initiatives.note}
         image={initiatives.heroImage}
-      />
+        note={initiatives.note}
+        titleClassName="text-[clamp(2.6rem,5vw,4.5rem)]"
+        imageClassName="object-[50%_40%] lg:object-[50%_60%]"
+      >
+        <p className="mt-6 max-w-[38rem] copy text-white/85">{initiatives.intro}</p>
+      </PhotoBackdropHero>
 
       <section className="paper relative py-24 lg:py-28">
         <ul className="page-container grid gap-6 md:grid-cols-2 lg:gap-8">

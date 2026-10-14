@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHero } from "@/components/PageHero";
+import { PhotoBackdropHero } from "@/components/PhotoBackdropHero";
 import { PhotoTile } from "@/components/PhotoTile";
 import { TornEdge, WordStack } from "@/components/Decor";
 import { whoWeAre } from "@/content/site";
@@ -13,13 +13,13 @@ export default function WhoWeArePage() {
   const { page } = whoWeAre;
   return (
     <>
-      <PageHero title={page.title} note={["Young People.", "Real Change."]} image={whoWeAre.heroImage}>
-        <div className="mt-6 max-w-[38rem] space-y-5 copy text-white/85">
+      <PhotoBackdropHero id="who-title" title={page.title} image={whoWeAre.heroImage} note={["Young People.", "Real Change."]}>
+        <div className="mt-6 space-y-5 copy text-white/85">
           {page.paragraphs.map((p) => (
             <p key={p.slice(0, 24)}>{p}</p>
           ))}
         </div>
-      </PageHero>
+      </PhotoBackdropHero>
 
       <section className="paper relative py-24 lg:py-28">
         <div className="page-container grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
