@@ -24,7 +24,7 @@
   --font-sans: var(--font-martel-sans), ui-sans-serif, system-ui, sans-serif;
   --font-hand: var(--font-gochi), "Comic Sans MS", cursive;
 
-  --container-page: 76rem;
+  --container-page: 84rem;
 }
 
 @layer base {
