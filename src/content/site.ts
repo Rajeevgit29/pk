@@ -55,8 +55,10 @@ export const links = {
 
 /** Contact details. Leave a field null to hide it. */
 export const contact = {
-  email: null as string | null,
-  phone: null as string | null,
+  /** Person to contact, shown above the email and phone in the footer. */
+  name: "Kripa Malhotra" as string | null,
+  email: "Projectkitaba@gmail.com" as string | null,
+  phone: "+91 96259 51936" as string | null,
   address: null as string | null,
 };
 
@@ -153,27 +155,8 @@ export const initiatives = {
   title: "Ideas in Action",
   intro:
     "Ongoing initiatives, year-round impact. From learning spaces to community programs, we work on multiple fronts to make education more holistic and accessible.",
-  note: ["Small", "Steps", "Big Change"],
   /** Background of the header at the top of the Our Initiatives page (gallery photo 15). */
   heroImage: { src: "/gallery/full/15.webp", alt: "Children sitting outdoors with their worksheets, a boy holding up his notebook" },
-  items: [
-    {
-      title: "Kitab Cup",
-      tagline: "Conversations. Competitions. Change.",
-      body: "A stage, a microphone and a team: competitions and conversations that give children room to be heard.",
-      icon: "stage",
-      image: { src: "/gallery/full/10.webp", alt: "Volunteers at the Project Kitab stall behind the Har Haath Mein Kitab banner" },
-      focus: "object-center",
-    },
-  ] as {
-    title: string;
-    tagline: string;
-    body: string;
-    icon: IconName;
-    image: Photo;
-    /** which part of the photo stays in view when it is cropped to the card */
-    focus?: string;
-  }[],
 };
 
 export const whoWeAre = {

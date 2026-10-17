@@ -7,29 +7,34 @@ import { inline } from "@/components/StoryPage";
 import { reports } from "@/content/reports";
 import { initiatives } from "@/content/site";
 import { assetPath } from "@/lib/asset-path";
-import { slugify } from "@/lib/slugify";
 
 export const metadata: Metadata = {
   title: "Our Initiatives",
   description: initiatives.intro,
 };
 
-const box = "relative flex h-full flex-col overflow-hidden rounded-lg border border-line bg-paper";
-
-function BoxPhoto({ photo, className = "", zoom = false }: { photo: { src: string; alt: string } | null; className?: string; zoom?: boolean }) {
+function BoxPhoto({ photo }: { photo: { src: string; alt: string } }) {
   return (
     <div className="relative aspect-[16/10] overflow-hidden bg-deep">
-      {photo && (
-        <Image
-          src={assetPath(photo.src)}
-          alt={zoom ? "" : photo.alt}
-          fill
-          sizes="(min-width: 1344px) 26rem, (min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw"
-          className={`object-cover ${zoom ? "transition-transform duration-500 group-hover:scale-[1.03]" : ""} ${className}`}
-        />
-      )}
+      <Image
+        src={assetPath(photo.src)}
+        alt=""
+        fill
+        sizes="(min-width: 1344px) 26rem, (min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw"
+        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+      />
     </div>
   );
+}
+
+/** Grid placement that centres a short last row (2 columns on tablets, 3 on large screens). */
+function centreLastRow(i: number, n: number) {
+  const classes: string[] = [];
+  if (n % 2 === 1 && i === n - 1) classes.push("md:col-start-2");
+  if (n % 3 === 1 && i === n - 1) classes.push("lg:col-start-3");
+  else if (n % 3 === 2 && i === n - 2) classes.push("lg:col-start-2");
+  else if (classes.length) classes.push("lg:col-start-auto");
+  return classes.join(" ");
 }
 
 export default function InitiativesPage() {
@@ -39,32 +44,19 @@ export default function InitiativesPage() {
         id="initiatives-title"
         title={initiatives.title}
         image={initiatives.heroImage}
-        note={initiatives.note}
         titleClassName="text-[clamp(2.6rem,5vw,4.5rem)]"
         imageClassName="object-[50%_40%] lg:object-[50%_60%]"
       >
         <p className="mt-6 max-w-[38rem] copy text-white/85">{initiatives.intro}</p>
       </PhotoBackdropHero>
 
-      {/* Kitab Cup, then the reports: all the same size, three to a row on large screens. */}
-      <section id="reports" aria-label="Initiatives and reports" className="paper relative scroll-mt-24 py-24 lg:py-28">
-        <ul className="page-container grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-          {initiatives.items.map((item) => (
-            <li key={item.title} id={slugify(item.title)} className="scroll-mt-28">
-              <article className={box}>
-                <BoxPhoto photo={item.image} className={item.focus} />
-                <div className="flex flex-1 flex-col p-6 lg:p-7">
-                  <h2 className="font-serif text-[1.45rem] leading-snug text-heading">{item.title}</h2>
-                  <p className="mt-1 font-hand text-[1.35rem] leading-tight text-deep">{item.tagline}</p>
-                  <p className="copy-sm mt-3">{item.body}</p>
-                </div>
-              </article>
-            </li>
-          ))}
-          {reports.map((report) => (
-            <li key={report.slug}>
-              <article className={`group ${box} transition-shadow duration-300 hover:shadow-[0_24px_50px_-28px_rgb(4_49_60/0.45)]`}>
-                <BoxPhoto photo={report.image} zoom />
+      {/* The reports, all the same size: three to a row on large screens, two on tablets; a short last row is centred. */}
+      <section id="reports" aria-label="Reports" className="paper relative scroll-mt-24 py-24 lg:py-28">
+        <ul className="page-container grid gap-6 md:auto-rows-fr md:grid-cols-4 lg:grid-cols-6 lg:gap-8">
+          {reports.map((report, i) => (
+            <li key={report.slug} className={`md:col-span-2 ${centreLastRow(i, reports.length)}`}>
+              <article className="group relative flex h-full flex-col overflow-hidden rounded-lg border border-line bg-paper transition-shadow duration-300 hover:shadow-[0_24px_50px_-28px_rgb(4_49_60/0.45)]">
+                <BoxPhoto photo={report.image} />
                 <div className="flex flex-1 flex-col p-6 lg:p-7">
                   <h2 className="font-serif text-[1.45rem] leading-snug text-heading">
                     {/* The whole box opens the report. */}

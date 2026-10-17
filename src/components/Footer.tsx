@@ -23,13 +23,13 @@ export function Footer() {
     <footer className="on-dark relative bg-abyss text-white/75">
       <TornEdge color="var(--color-abyss)" side="top" seed={41} />
       <div className="page-container pb-10 pt-16 lg:pt-20">
-        <div className="grid gap-12 lg:grid-cols-[auto_1fr_auto] lg:items-start lg:gap-16">
+        <div className="grid gap-12 lg:grid-cols-[auto_1fr_auto] lg:items-start lg:gap-12">
           <Link href="/" aria-label="Project Kitab — home" className="w-fit">
             <Image src={assetPath("/brand/logo-white.svg")} alt="Project Kitab" width={1540} height={950} className="h-20 w-auto" />
           </Link>
 
           <nav aria-label="Footer">
-            <ul className="grid grid-cols-2 gap-x-8 gap-y-3 text-[0.95rem] sm:grid-cols-4 lg:flex lg:flex-wrap lg:justify-center lg:gap-x-9 lg:pt-7">
+            <ul className="grid grid-cols-2 gap-x-8 gap-y-3 text-[0.95rem] sm:grid-cols-4 lg:flex lg:flex-wrap lg:justify-center lg:gap-x-7 lg:pt-7">
               {footerNav.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className="transition-colors hover:text-white">
@@ -58,6 +58,7 @@ export function Footer() {
             </ul>
             {contactRows.length > 0 && (
               <ul className="space-y-2 text-sm lg:text-right">
+                {contact.name && <li className="font-semibold text-white/90">{contact.name}</li>}
                 {contactRows.map((row) => (
                   <li key={row.label} className="flex items-center gap-2 lg:justify-end">
                     <Icon name={row.icon} className="size-4 text-white/50 [--pin-hole:var(--color-abyss)]" />

@@ -68,7 +68,7 @@ export const reports: Report[] = [
   {
     slug: "summer-program",
     title: "Summer Program",
-    image: { src: "/gallery/full/20260712-112512.webp", alt: "A smiling child during an outdoor session on a red mat" },
+    image: { src: "/gallery/full/5fdfe642-8db8-438f-adce-8b9b367a0605.webp", alt: "A volunteer helping students in uniform with their work" },
     paragraphs: [
       "At Project Kitab, we believe learning goes beyond books and classrooms. It is also about helping children explore their interests, express themselves, build confidence, and understand the world around them.",
       "Through our Summer Program, we organised activities in spoken English, sports, theatre, dance, and creative learning, along with sessions on important life skills. We also held discussions on consent, sexual literacy, financial literacy, peer pressure, moral values, and ethics to help children better understand themselves and the situations they may face in everyday life.",
