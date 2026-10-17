@@ -47,8 +47,8 @@ export const links = {
   instagram: "https://www.instagram.com/project.kitab/",
   linkedin: null as string | null,
   youtube: null as string | null,
-  /** Volunteer sign-up form (e.g. a Google Form). Until set, the button opens Instagram DMs. */
-  volunteerForm: null as string | null,
+  /** Volunteer sign-up: the Linktree, which lists the volunteering forms. Set to null to open Instagram DMs instead. */
+  volunteerForm: "https://linktr.ee/project.kitab" as string | null,
   /** Partnership enquiry form. Until set, the button opens Instagram DMs. */
   partnerForm: null as string | null,
 };
@@ -64,7 +64,7 @@ export const contact = {
 
 /** How to donate. Until at least one is set, the Donate page shows a "details coming soon" note. */
 export const donation = {
-  paymentLink: null as string | null,
+  paymentLink: "https://linktr.ee/project.kitab" as string | null,
   upiId: null as string | null,
   upiQr: null as string | null,
   bank: null as null | { accountName: string; accountNumber: string; ifsc: string; bankName: string },
@@ -223,6 +223,8 @@ export const blog = {
 
 export const donate = {
   title: "Your contribution doesn't disappear into a system.",
+  /** Background of the header at the top of the Donate page (gallery photo 11). */
+  heroImage: { src: "/gallery/full/11.webp", alt: "Young children in bright winter caps smiling and making peace signs" },
   impact: [
     "It becomes a book a child reads twice, or a notebook filled to the last page.",
     "It becomes a sanitary pad that means a girl doesn't have to miss school, or a football that brings a whole neighbourhood onto the ground.",

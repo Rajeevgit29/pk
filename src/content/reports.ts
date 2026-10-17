@@ -15,7 +15,7 @@ export const reports: Report[] = [
   {
     slug: "nsids",
     title: "NSIDS: Two Days. One Ecosystem. A Movement in the Making.",
-    image: { src: "/gallery/full/img-20250105-142112.webp", alt: "A large group photo of volunteers and children" },
+    image: { src: "/images/nsids-panel.webp", alt: "A panel discussion on stage at NSIDS, India International Centre, beside the summit banner" },
     paragraphs: [
       "In November 2025, Project Kitab hosted the National Social Impact Development Summit (NSIDS), a flagship initiative marking the organisation’s second anniversary.",
       "Designed to bridge the gap between the intention to create social change and the practical knowledge required to sustain it, NSIDS brought together aspiring student leaders, established social-impact practitioners, and community members to explore the realities of the NGO/NPO ecosystem.",
@@ -41,7 +41,7 @@ export const reports: Report[] = [
   {
     slug: "kitab-cup-season-1",
     title: "Kitab Cup S1: Where It All Began",
-    image: { src: "/images/gyaan-through-maidaan.jpg", alt: "Young players on a football pitch as one of them dribbles the ball forward" },
+    image: { src: "/images/kitab-cup-s1-kick.webp", alt: "A player follows through on a kick as a teammate watches the ball fly, with spectators behind the net" },
     paragraphs: [
       "Kitab Cup Season 1 marked a significant step in Project Kitab’s efforts to combine sport with community-driven impact. Bringing together young athletes, supporters, sponsors, and social impact organisations, the tournament created a platform where football could foster collaboration, build connections, and contribute to a larger purpose.",
       "The inaugural season, hosted at The Millenium School, featured seven participating teams: Dingle Dynasty, B.N.P.S Sports Academy, Sporting Wolf FC, NIFC Academy, MRISN FC, Systum Sixers, and The Millennium School. The tournament brought together approximately 300 people, creating an atmosphere of competition, enthusiasm, and collective participation.",
@@ -54,7 +54,7 @@ export const reports: Report[] = [
   {
     slug: "kitab-cup-season-2",
     title: "The Kitab Cup S2: A Bigger Crowd, a Bigger Cause",
-    image: { src: "/gallery/full/20.webp", alt: "A crowd of children listening during a session" },
+    image: { src: "/images/kitab-cup-s2-trophy.webp", alt: "Players lifting the Kitab Cup trophy together on the field at sunset, with event stalls behind them" },
     paragraphs: [
       "700+ attendees. 10 teams. 15+ NGOs. 9 stalls. Kitab Cup Season 2 brought together a growing community around football, demonstrating how a sporting event can become a meeting point for organisations, initiatives, and people with different interests and shared ambitions.",
       "With attendance more than doubling from Season 1’s approximately 300 people, the second edition marked a significant milestone for Project Kitab. Ten teams competed in the tournament: Goal Diggers FC, Physics Failures, Tehelka FC, Dholakpur FC, The Dementorz, Bubble, Indusliga FA, Panauti FC, Feminists United, and Systum Sixers.",

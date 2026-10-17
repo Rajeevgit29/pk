@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ButtonLink } from "@/components/ButtonLink";
-import { PageHero } from "@/components/PageHero";
+import { PhotoBackdropHero } from "@/components/PhotoBackdropHero";
 import { donate, donation, links } from "@/content/site";
 import { assetPath } from "@/lib/asset-path";
 
@@ -15,7 +15,14 @@ export default function DonatePage() {
 
   return (
     <>
-      <PageHero title={donate.title} note={["Every", "rupee opens", "a door"]} />
+      <PhotoBackdropHero
+        id="donate-title"
+        title={donate.title}
+        image={donate.heroImage}
+        note={["Every", "rupee opens", "a door"]}
+        imageClassName="object-[50%_30%] lg:object-[50%_40%]"
+        compact
+      />
 
       <section aria-labelledby="impact-title" className="paper relative py-24 lg:py-28">
         <div className="page-container grid gap-14 lg:grid-cols-12">
