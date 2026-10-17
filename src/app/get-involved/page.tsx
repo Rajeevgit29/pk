@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ButtonLink } from "@/components/ButtonLink";
-import { Icon } from "@/components/Icon";
+import { NoteBoard } from "@/components/NoteBoard";
 import { PageHero } from "@/components/PageHero";
 import { contact, getInvolved, links } from "@/content/site";
 
@@ -16,13 +16,13 @@ export default function GetInvolvedPage() {
 
   return (
     <>
-      <PageHero title={page.title} note={getInvolved.words}>
+      <PageHero title={page.title}>
         <div className="mt-6 max-w-[38rem] space-y-5 copy text-white/85">
           <p>{page.paragraphs[0]}</p>
         </div>
       </PageHero>
 
-      <section aria-labelledby="ways-title" className="paper relative py-24 lg:py-28">
+      <section aria-labelledby="ways-title" className="paper relative overflow-x-clip py-24 lg:py-28">
         <div className="page-container grid gap-14 lg:grid-cols-12">
           <div className="space-y-5 copy lg:col-span-5">
             <h2 id="ways-title" className="display text-[clamp(2rem,3.4vw,3rem)] text-heading">
@@ -32,16 +32,9 @@ export default function GetInvolvedPage() {
               <p key={p.slice(0, 24)}>{p}</p>
             ))}
           </div>
-          <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:col-span-7">
-            {page.ways.map((way) => (
-              <li key={way.title} className="flex flex-col items-start gap-4 rounded-md border border-line bg-paper p-5">
-                <span className="flex size-11 items-center justify-center rounded-full bg-petrol text-white">
-                  <Icon name={way.icon} className="size-5" />
-                </span>
-                <span className="font-medium leading-snug text-heading">{way.title}</span>
-              </li>
-            ))}
-          </ul>
+          <div className="lg:col-span-7">
+            <NoteBoard ways={page.ways} />
+          </div>
         </div>
 
         <ul className="page-container mt-20 grid gap-4 sm:grid-cols-3">

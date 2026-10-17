@@ -183,7 +183,6 @@ export const whoWeAre = {
 };
 
 export const getInvolved = {
-  words: ["Different", "People", "Same Mission"],
   page: {
     title: "There's more than one way to be part of Project Kitab.",
     paragraphs: [
