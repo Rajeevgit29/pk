@@ -40,8 +40,26 @@ export function Footer() {
             </ul>
           </nav>
 
-          <div className="flex flex-col gap-5 lg:items-end lg:pt-5">
-            <ul className="flex items-center gap-3">
+          <div className="lg:pt-5 lg:text-right">
+            <h2 className="font-serif text-[1.35rem] leading-none text-white">Contact us</h2>
+            {(contact.name || contactRows.length > 0) && (
+              <ul className="mt-4 space-y-2.5 text-[0.95rem]">
+                {contact.name && <li className="font-semibold text-white">{contact.name}</li>}
+                {contactRows.map((row) => (
+                  <li key={row.label} className="flex items-center gap-2.5 lg:justify-end">
+                    <Icon name={row.icon} className="size-4 shrink-0 text-white/55 [--pin-hole:var(--color-abyss)]" />
+                    {row.href ? (
+                      <a href={row.href} className="transition-colors hover:text-white">
+                        {row.label}
+                      </a>
+                    ) : (
+                      <span>{row.label}</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            )}
+            <ul className="mt-5 flex items-center gap-3 lg:justify-end">
               {socials.map((s) => (
                 <li key={s.name}>
                   <a
@@ -56,23 +74,6 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-            {contactRows.length > 0 && (
-              <ul className="space-y-2 text-sm lg:text-right">
-                {contact.name && <li className="font-semibold text-white/90">{contact.name}</li>}
-                {contactRows.map((row) => (
-                  <li key={row.label} className="flex items-center gap-2 lg:justify-end">
-                    <Icon name={row.icon} className="size-4 text-white/50 [--pin-hole:var(--color-abyss)]" />
-                    {row.href ? (
-                      <a href={row.href} className="transition-colors hover:text-white">
-                        {row.label}
-                      </a>
-                    ) : (
-                      <span>{row.label}</span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            )}
           </div>
         </div>
 
