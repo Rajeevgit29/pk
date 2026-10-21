@@ -33,7 +33,7 @@ export function PageHero({
       <div
         className={`page-container relative ${
           hasPhotos
-            ? `grid ${photos.length > 1 ? "lg:items-start" : "items-center"} gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,23rem)] lg:gap-14 xl:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] xl:gap-20`
+            ? `grid ${photos.length > 1 ? "lg:items-start" : "items-center"} gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:gap-14 xl:grid-cols-[minmax(0,1fr)_minmax(0,34rem)] xl:gap-16`
             : ""
         }`}
       >
@@ -69,7 +69,7 @@ export function PageHero({
                   alt={photo.alt}
                   fill
                   preload={i === 0}
-                  sizes="(min-width: 1280px) 26rem, (min-width: 1024px) 23rem, (min-width: 480px) 28rem, 92vw"
+                  sizes="(min-width: 1280px) 34rem, (min-width: 1024px) 28rem, (min-width: 480px) 28rem, 92vw"
                   className="object-cover"
                 />
               </div>

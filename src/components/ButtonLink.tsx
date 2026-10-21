@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { Icon } from "./Icon";
 
-type Variant = "solid" | "outline-light" | "outline-dark" | "text-light" | "text-dark";
+export type Variant = "solid" | "outline-light" | "outline-dark" | "text-light" | "text-dark";
 
 const styles: Record<Variant, string> = {
   solid: "bg-bright text-white hover:bg-bright-hover shadow-[0_8px_24px_-12px_rgb(14_128_150/0.8)]",

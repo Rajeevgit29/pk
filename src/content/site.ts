@@ -189,6 +189,11 @@ export const whoWeAre = {
 };
 
 export const getInvolved = {
+  /** "Email us" under Partner with us: to Projectkitaba@gmail.com, CC projectkitabboard@gmail.com. */
+  partnerMail: "mailto:Projectkitaba@gmail.com?cc=projectkitabboard@gmail.com&subject=Inquiry%20%E2%80%93%20Project%20Kitab",
+  /** The same email as a Gmail compose window, used on computers. */
+  partnerMailGmail:
+    "https://mail.google.com/mail/?view=cm&fs=1&to=Projectkitaba@gmail.com&cc=projectkitabboard@gmail.com&su=Inquiry%20%E2%80%93%20Project%20Kitab",
   page: {
     title: "There's more than one way to be part of Project Kitab.",
     paragraphs: [

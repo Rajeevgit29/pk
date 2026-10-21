@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { ButtonLink } from "@/components/ButtonLink";
+import { EmailButton } from "@/components/EmailButton";
 import { NoteBoard } from "@/components/NoteBoard";
 import { PageHero } from "@/components/PageHero";
-import { contact, getInvolved, links } from "@/content/site";
+import { getInvolved, links } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Get Involved",
@@ -12,7 +13,6 @@ export const metadata: Metadata = {
 export default function GetInvolvedPage() {
   const { page } = getInvolved;
   const volunteerHref = links.volunteerForm ?? links.instagram;
-  const partnerHref = links.partnerForm ?? (contact.email ? `mailto:${contact.email}` : links.instagram);
 
   return (
     <>
@@ -70,9 +70,22 @@ export default function GetInvolvedPage() {
                 <p className="copy-sm mt-2 text-white/80">
                   Schools, organisations and brands: collaborate on workshops, events, campaigns and drives.
                 </p>
-                <ButtonLink href={partnerHref} variant="outline-light" arrow size="sm" className="mt-5 h-11">
-                  {links.partnerForm ? "Start a partnership" : contact.email ? "Email us" : "Message us on Instagram"}
-                </ButtonLink>
+                {links.partnerForm ? (
+                  <ButtonLink href={links.partnerForm} variant="outline-light" arrow size="sm" className="mt-5 h-11">
+                    Start a partnership
+                  </ButtonLink>
+                ) : (
+                  <EmailButton
+                    mailto={getInvolved.partnerMail}
+                    gmail={getInvolved.partnerMailGmail}
+                    variant="outline-light"
+                    arrow
+                    size="sm"
+                    className="mt-5 h-11"
+                  >
+                    Email us
+                  </EmailButton>
+                )}
               </div>
             </div>
           </div>
