@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ButtonLink } from "@/components/ButtonLink";
+import { MailUsButton } from "@/components/MailUsButton";
 import { PhotoBackdropHero } from "@/components/PhotoBackdropHero";
 import { donate, donation } from "@/content/site";
 import { assetPath } from "@/lib/asset-path";
@@ -47,9 +48,7 @@ export default function DonatePage() {
               <div className="mt-6 space-y-6 text-[0.95rem]">
                 {/* Two separate buttons: side by side from tablet width, stacked on phones. */}
                 <div className="grid gap-3 sm:grid-cols-2">
-                  <ButtonLink href={donation.mailUs} icon="mail" className="w-full">
-                    Mail Us
-                  </ButtonLink>
+                  <MailUsButton mailto={donation.mailUs} gmail={donation.mailUsGmail} className="w-full" />
                   <ButtonLink href={donation.callUs} icon="phone" className="w-full">
                     Call Us
                   </ButtonLink>

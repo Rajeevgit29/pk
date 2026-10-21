@@ -12,6 +12,13 @@ const styles: Record<Variant, string> = {
   "text-dark": "px-0! text-heading hover:text-ocean",
 };
 
+/** The classes for a button-style link, for components that render their own <a>. */
+export function buttonClass(variant: Variant = "solid", size: "sm" | "md" = "md", className = "") {
+  return `group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-[4px] font-medium transition-colors duration-200 ${
+    size === "sm" ? "h-10 px-5 text-sm" : "h-12 px-7 text-[0.95rem]"
+  } ${styles[variant]} ${className}`;
+}
+
 export function ButtonLink({
   href,
   children,
@@ -33,9 +40,7 @@ export function ButtonLink({
   const external = /^https?:\/\//.test(href);
   // Email and phone links open the mail app or dialer, so they skip the site's page navigation.
   const app = /^(mailto|tel):/.test(href);
-  const cls = `group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-[4px] font-medium transition-colors duration-200 ${
-    size === "sm" ? "h-10 px-5 text-sm" : "h-12 px-7 text-[0.95rem]"
-  } ${styles[variant]} ${className}`;
+  const cls = buttonClass(variant, size, className);
   const content = (
     <>
       {icon && <Icon name={icon} className="size-4" />}
