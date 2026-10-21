@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PhotoBackdropHero } from "@/components/PhotoBackdropHero";
 import { PhotoTile } from "@/components/PhotoTile";
-import { TornEdge, WordStack } from "@/components/Decor";
+import { TornEdge } from "@/components/Decor";
 import { whoWeAre } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -42,7 +42,6 @@ export default function WhoWeArePage() {
                 <p key={p.slice(0, 24)}>{p}</p>
               ))}
             </div>
-            <WordStack words={whoWeAre.words} className="mt-10 flex flex-wrap gap-x-6 gap-y-2 space-y-0!" />
           </div>
         </div>
       </section>

@@ -17,6 +17,7 @@ export function ButtonLink({
   children,
   variant = "solid",
   arrow = false,
+  icon,
   size = "md",
   className = "",
 }: {
@@ -24,19 +25,31 @@ export function ButtonLink({
   children: ReactNode;
   variant?: Variant;
   arrow?: boolean;
+  /** Icon shown before the label. */
+  icon?: Parameters<typeof Icon>[0]["name"];
   size?: "sm" | "md";
   className?: string;
 }) {
   const external = /^https?:\/\//.test(href);
+  // Email and phone links open the mail app or dialer, so they skip the site's page navigation.
+  const app = /^(mailto|tel):/.test(href);
   const cls = `group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-[4px] font-medium transition-colors duration-200 ${
     size === "sm" ? "h-10 px-5 text-sm" : "h-12 px-7 text-[0.95rem]"
   } ${styles[variant]} ${className}`;
   const content = (
     <>
+      {icon && <Icon name={icon} className="size-4" />}
       {children}
       {arrow && <Icon name="arrow" className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />}
     </>
   );
+  if (app) {
+    return (
+      <a href={href} className={cls}>
+        {content}
+      </a>
+    );
+  }
   return external ? (
     <a href={href} target="_blank" rel="noopener noreferrer" className={cls}>
       {content}

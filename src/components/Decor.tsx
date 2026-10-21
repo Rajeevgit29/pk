@@ -110,19 +110,3 @@ export function HandNote({
     </div>
   );
 }
-
-/** Small tracked capitals stacked vertically (the mockup's side word lists). */
-export function WordStack({ words, className = "", tone = "dark" }: { words: string[]; className?: string; tone?: "dark" | "light" }) {
-  const color = tone === "dark" ? "text-heading/70" : "text-white/70";
-  const line = tone === "dark" ? "bg-heading/25" : "bg-white/30";
-  return (
-    <ul aria-hidden="true" className={`space-y-2.5 text-[0.68rem] font-medium uppercase tracking-[0.24em] ${color} ${className}`}>
-      {words.map((w, i) => (
-        <li key={w} className="flex items-center gap-3">
-          {w}
-          {i === words.length - 1 && <span className={`h-px w-10 ${line}`} />}
-        </li>
-      ))}
-    </ul>
-  );
-}

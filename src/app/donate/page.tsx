@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { ButtonLink } from "@/components/ButtonLink";
 import { PhotoBackdropHero } from "@/components/PhotoBackdropHero";
-import { donate, donation, links } from "@/content/site";
+import { donate, donation } from "@/content/site";
 import { assetPath } from "@/lib/asset-path";
 
 export const metadata: Metadata = {
@@ -11,8 +11,6 @@ export const metadata: Metadata = {
 };
 
 export default function DonatePage() {
-  const hasDetails = Boolean(donation.paymentLink || donation.upiId || donation.bank);
-
   return (
     <>
       <PhotoBackdropHero
@@ -44,51 +42,51 @@ export default function DonatePage() {
           <aside aria-labelledby="how-title" className="lg:col-span-5">
             <div className="on-dark teal-glow sticky top-28 rounded-lg p-8 text-white">
               <h2 id="how-title" className="font-serif text-2xl font-semibold">
-                How to give
+                How to donate
               </h2>
-              {hasDetails ? (
-                <div className="mt-6 space-y-6 text-[0.95rem]">
-                  {donation.paymentLink && (
-                    <ButtonLink href={donation.paymentLink} arrow className="w-full">
-                      Donate online
-                    </ButtonLink>
-                  )}
-                  {donation.upiId && (
-                    <div>
-                      <p className="eyebrow text-white/60">UPI</p>
-                      <p className="mt-1 select-all font-mono text-base">{donation.upiId}</p>
-                      {donation.upiQr && (
-                        <Image
-                          src={assetPath(donation.upiQr)}
-                          alt={`UPI QR code for ${donation.upiId}`}
-                          width={220}
-                          height={220}
-                          className="mt-4 rounded-md bg-white p-2"
-                        />
-                      )}
-                    </div>
-                  )}
-                  {donation.bank && (
-                    <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5">
-                      <dt className="text-white/60">Account name</dt>
-                      <dd>{donation.bank.accountName}</dd>
-                      <dt className="text-white/60">Account no.</dt>
-                      <dd className="select-all font-mono">{donation.bank.accountNumber}</dd>
-                      <dt className="text-white/60">IFSC</dt>
-                      <dd className="select-all font-mono">{donation.bank.ifsc}</dd>
-                      <dt className="text-white/60">Bank</dt>
-                      <dd>{donation.bank.bankName}</dd>
-                    </dl>
-                  )}
-                </div>
-              ) : (
-                <div className="copy-sm mt-4 space-y-5 text-white/85">
-                  <p>Online donations are opening soon. Until then, message us and we&apos;ll share how you can give.</p>
-                  <ButtonLink href={links.instagram} arrow className="w-full">
-                    Message us on Instagram
+              <div className="mt-6 space-y-6 text-[0.95rem]">
+                {/* Two separate buttons: side by side from tablet width, stacked on phones. */}
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <ButtonLink href={donation.mailUs} icon="mail" className="w-full">
+                    Mail Us
+                  </ButtonLink>
+                  <ButtonLink href={donation.callUs} icon="phone" className="w-full">
+                    Call Us
                   </ButtonLink>
                 </div>
-              )}
+                {donation.paymentLink && (
+                  <ButtonLink href={donation.paymentLink} arrow className="w-full">
+                    Donate online
+                  </ButtonLink>
+                )}
+                {donation.upiId && (
+                  <div>
+                    <p className="eyebrow text-white/60">UPI</p>
+                    <p className="mt-1 select-all font-mono text-base">{donation.upiId}</p>
+                    {donation.upiQr && (
+                      <Image
+                        src={assetPath(donation.upiQr)}
+                        alt={`UPI QR code for ${donation.upiId}`}
+                        width={220}
+                        height={220}
+                        className="mt-4 rounded-md bg-white p-2"
+                      />
+                    )}
+                  </div>
+                )}
+                {donation.bank && (
+                  <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5">
+                    <dt className="text-white/60">Account name</dt>
+                    <dd>{donation.bank.accountName}</dd>
+                    <dt className="text-white/60">Account no.</dt>
+                    <dd className="select-all font-mono">{donation.bank.accountNumber}</dd>
+                    <dt className="text-white/60">IFSC</dt>
+                    <dd className="select-all font-mono">{donation.bank.ifsc}</dd>
+                    <dt className="text-white/60">Bank</dt>
+                    <dd>{donation.bank.bankName}</dd>
+                  </dl>
+                )}
+              </div>
             </div>
           </aside>
         </div>

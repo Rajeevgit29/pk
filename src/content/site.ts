@@ -45,7 +45,7 @@ export const site = {
 /** External links. `null` = not provided yet; the site falls back gracefully. */
 export const links = {
   instagram: "https://www.instagram.com/project.kitab/",
-  linkedin: null as string | null,
+  linkedin: "https://www.linkedin.com/company/project-kitab1/" as string | null,
   youtube: null as string | null,
   /** Volunteer sign-up: the Linktree, which lists the volunteering forms. Set to null to open Instagram DMs instead. */
   volunteerForm: "https://linktr.ee/project.kitab" as string | null,
@@ -55,16 +55,20 @@ export const links = {
 
 /** Contact details. Leave a field null to hide it. */
 export const contact = {
-  /** Person to contact, shown above the email and phone in the footer. */
-  name: "Kripa Malhotra" as string | null,
   email: "Projectkitaba@gmail.com" as string | null,
-  phone: "+91 96259 51936" as string | null,
+  /** Phone numbers, shown in this order in the footer. */
+  phones: ["+91 92890 81107", "+91 96259 51936"],
   address: null as string | null,
 };
 
-/** How to donate. Until at least one is set, the Donate page shows a "details coming soon" note. */
+/** The "How to donate" box on the Donate page: Mail Us and Call Us, plus any of these that are set. */
 export const donation = {
-  paymentLink: "https://linktr.ee/project.kitab" as string | null,
+  /** Online payment page; when set, a "Donate online" button shows under Mail Us and Call Us. */
+  paymentLink: null as string | null,
+  /** "Mail Us" in the How to give box: To, CC and subject filled in, empty body. */
+  mailUs: "mailto:Projectkitaba@gmail.com?cc=projectkitabboard@gmail.com%2CKripamalhotra.official@gmail.com&subject=Inquiry%20%E2%80%93%20Project%20Kitab",
+  /** "Call Us" in the How to give box. */
+  callUs: "tel:+919289081107",
   upiId: null as string | null,
   upiQr: null as string | null,
   bank: null as null | { accountName: string; accountNumber: string; ifsc: string; bankName: string },
@@ -160,7 +164,6 @@ export const initiatives = {
 };
 
 export const whoWeAre = {
-  words: ["Youth-Led", "Inclusive", "Community-Driven", "Impact-Focused", "Always Learning"],
   /** Beside the page title at the top of the Who We Are page (gallery photo 24). */
   heroImage: { src: "/gallery/full/29.webp", alt: "A young volunteer taking a selfie with smiling girls" },
   /** Next to "We don't see children as beneficiaries" (gallery photo 28). */

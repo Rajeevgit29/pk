@@ -15,7 +15,7 @@ export function Footer() {
   const footerNav = [...nav, { label: "Get Involved", href: "/get-involved" }, { label: "Donate", href: "/donate" }];
   const contactRows = [
     contact.email && { icon: "mail" as const, label: contact.email, href: `mailto:${contact.email}` },
-    contact.phone && { icon: "phone" as const, label: contact.phone, href: `tel:${contact.phone.replace(/\s+/g, "")}` },
+    ...contact.phones.map((phone) => ({ icon: "phone" as const, label: phone, href: `tel:${phone.replace(/\s+/g, "")}` })),
     contact.address && { icon: "pin" as const, label: contact.address, href: null },
   ].filter(Boolean) as { icon: "mail" | "phone" | "pin"; label: string; href: string | null }[];
 
@@ -42,9 +42,8 @@ export function Footer() {
 
           <div className="lg:pt-5 lg:text-right">
             <h2 className="font-serif text-[1.35rem] leading-none text-white">Contact us</h2>
-            {(contact.name || contactRows.length > 0) && (
+            {contactRows.length > 0 && (
               <ul className="mt-4 space-y-2.5 text-[0.95rem]">
-                {contact.name && <li className="font-semibold text-white">{contact.name}</li>}
                 {contactRows.map((row) => (
                   <li key={row.label} className="flex items-center gap-2.5 lg:justify-end">
                     <Icon name={row.icon} className="size-4 shrink-0 text-white/55 [--pin-hole:var(--color-abyss)]" />
