@@ -45,6 +45,11 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # GitHub's built-in "pages build and deployment" (from the branch) also publishes on every
+      # push, and whichever finishes last is what visitors see. Wait so this real build lands last.
+      # The permanent fix is Settings → Pages → Source: "GitHub Actions"; then this wait can go.
+      - name: Wait for the branch build to finish first
+        run: sleep 90
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
