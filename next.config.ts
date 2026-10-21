@@ -1,10 +1,10 @@
 import type { NextConfig } from "next";
 
-const basePath = process.env.GITHUB_ACTIONS === "true" ? "/pk" : "";
+// The site is served from its own domain (projectkitab.org), so it lives at the root, with no /pk.
+const basePath = "";
 
 const nextConfig: NextConfig = {
   output: "export",
-  // GitHub Pages serves project sites from the repository name.
   basePath,
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
