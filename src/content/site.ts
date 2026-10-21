@@ -66,10 +66,10 @@ export const donation = {
   /** Online payment page; when set, a "Donate online" button shows under Mail Us and Call Us. */
   paymentLink: null as string | null,
   /** "Mail Us" in the How to donate box: To, CC and subject filled in, empty body. Phones use the email link. */
-  mailUs: "mailto:Projectkitaba@gmail.com?cc=projectkitabboard@gmail.com%2CKripamalhotra.official@gmail.com&subject=Inquiry%20%E2%80%93%20Project%20Kitab",
+  mailUs: "mailto:Projectkitaba@gmail.com?cc=projectkitabboard@gmail.com%2CKripamalhotra.official@gmail.com%2Cpaarthnangia@gmail.com&subject=Inquiry%20%E2%80%93%20Project%20Kitab",
   /** The same email as a Gmail compose window, used on computers (where email links often do nothing). */
   mailUsGmail:
-    "https://mail.google.com/mail/?view=cm&fs=1&to=Projectkitaba@gmail.com&cc=projectkitabboard@gmail.com,Kripamalhotra.official@gmail.com&su=Inquiry%20%E2%80%93%20Project%20Kitab",
+    "https://mail.google.com/mail/?view=cm&fs=1&to=Projectkitaba@gmail.com&cc=projectkitabboard@gmail.com,Kripamalhotra.official@gmail.com,paarthnangia@gmail.com&su=Inquiry%20%E2%80%93%20Project%20Kitab",
   /** "Call Us" in the How to give box. */
   callUs: "tel:+919289081107",
   upiId: null as string | null,
