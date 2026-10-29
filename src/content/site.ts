@@ -48,7 +48,7 @@ export const links = {
   linkedin: "https://www.linkedin.com/company/project-kitab1/" as string | null,
   youtube: null as string | null,
   /** Volunteer sign-up: the Linktree, which lists the volunteering forms. Set to null to open Instagram DMs instead. */
-  volunteerForm: "https://linktr.ee/project.kitab" as string | null,
+  volunteerForm: "https://linktr.ee/projectkitab" as string | null,
   /** Partnership enquiry form. Until set, the button opens Instagram DMs. */
   partnerForm: null as string | null,
 };
